@@ -1,25 +1,41 @@
 import React from "react";
-import { Buttons, PageLinks } from "../GenComponents";
-import { IconContainer, LeftNavBar } from "./NavBarElement";
-import NavOptions from "./NavOptions/Index";
+import {
+  NavBg,
+  NavContainer,
+  NavUl,
+  NavLi,
+  NavRight,
+  NavIcon,
+  NavText,
+  LocationIcon,
+  HelpIcon,
+} from "./NavBarElements";
 
-function NavBar() {
+function Navbar() {
   return (
-    <LeftNavBar>
-      <IconContainer>
-        <NavOptions Home Link="/" Text="Home" />
-        <NavOptions Search Link="/" Text="Search" />
-        <NavOptions Videos Link="/" Text="Videos" />
-        <NavOptions Classes Link="/" Text="Classes" />
-        <NavOptions Snippets Link="/" Text="Snippets" />
-        <NavOptions Tags Link="/" Text="Tags" />
-      </IconContainer>
-
-      <PageLinks to="/sign-in">
-        <Buttons lightBg={false}>Login</Buttons>
-      </PageLinks>
-    </LeftNavBar>
+    <>
+      <NavBg>
+        <NavContainer>
+          <NavUl>
+            <NavLi>Home</NavLi>
+            <NavLi>About</NavLi>
+            <NavLi>Collection</NavLi>
+            <NavLi>Blog</NavLi>
+          </NavUl>
+          <NavRight>
+            <NavIcon>
+              <HelpIcon />
+              <NavText>Help</NavText>
+            </NavIcon>
+            <NavIcon>
+              <LocationIcon />
+              <NavText>Enugu</NavText>
+            </NavIcon>
+          </NavRight>
+        </NavContainer>
+      </NavBg>
+    </>
   );
 }
 
-export default NavBar;
+export default Navbar;

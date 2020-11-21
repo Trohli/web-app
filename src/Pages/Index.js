@@ -1,13 +1,11 @@
-import React from "react";
-import { HeroOne } from "../components/Data";
-import HeroVideo from "../components/HeroVideo";
+import React from 'react'
 
 function Home() {
-  return (
-    <>
-      <HeroVideo {...HeroOne} />
-    </>
-  );
+    return (
+        <div>
+            
+        </div>
+    )
 }
 
-export default Home;
+export default Home
