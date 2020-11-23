@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import {
   SlideBar,
@@ -23,6 +24,13 @@ function HeroSection() {
     transition: 0.45,
     activeIndex: 0,
   });
+
+  useEffect(() => {
+    const play = setInterval(() => nextSlide(), 6000);
+    return () => {
+      clearInterval(play);
+    };
+  }, [state]);
 
   const { translate, transition, activeIndex } = state;
 
@@ -57,13 +65,6 @@ function HeroSection() {
       translate: (activeIndex - 1) * ScreenWidth(),
     });
   };
-
-  // const slides = [
-  //   "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
-  //   "https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80",
-  //   "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80",
-  //   "https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80",
-  // ];
 
   const slides = [
     {
