@@ -1,11 +1,13 @@
 import React from "react";
-import { Card } from "./CloseCardElements";
+import { Card, CardImg, CardText, CardM } from "./CloseCardElements";
 
-function ClosebyCards() {
+function ClosebyCards({ image, text, distance }) {
   return (
     <>
       <Card>
-        <p>cards go here</p>
+        <CardImg src={image} />
+        <CardText> {text} </CardText>
+        <CardM> {distance} </CardM>
       </Card>
     </>
   );

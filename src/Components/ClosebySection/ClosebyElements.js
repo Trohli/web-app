@@ -7,23 +7,35 @@ export const ClosebySection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: Space-between;
-  height: 280px;
+  height: 300px;
   width: 100%;
 `;
 
 export const CardSection = styled.div`
-  display: felx;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  grid-gap: 16px;
+  padding: 0 50px;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
 `;
 
 export const CardBar = styled.div`
-  transform: translateX(-${({ translate }) => translate}px);
-  transition: transform ease-out 0.45s;
+  max-width: 300px;
+  width: 100%;
   height: 100%;
-  width: ${({ width }) => width}px;
   display: flex;
+  overflow: hidden;
+  align-items: center;
 `;
 
 export const ClosebyHeading = styled.div`

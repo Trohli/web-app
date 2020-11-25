@@ -5,12 +5,12 @@ import HeroSection from "../Components/HeroSection/Index";
 
 function Home() {
   return (
-    <div>
+    <>
       <HeroSection />
       <ProductContainer>
         <ClosebyItems />
       </ProductContainer>
-    </div>
+    </>
   );
 }
 
