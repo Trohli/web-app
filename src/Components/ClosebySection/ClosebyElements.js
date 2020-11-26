@@ -12,13 +12,14 @@ export const ClosebySection = styled.section`
 `;
 
 export const CardSection = styled.div`
-  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   grid-gap: 16px;
   padding: 0 50px;
+  box-sizing: border-box;
 
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
@@ -30,8 +31,6 @@ export const CardSection = styled.div`
 `;
 
 export const CardBar = styled.div`
-  max-width: 300px;
-  width: 100%;
   height: 100%;
   display: flex;
   overflow: hidden;

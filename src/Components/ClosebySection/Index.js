@@ -152,6 +152,60 @@ function ClosebyItems() {
               infinite
               mouseTracking
               animationType="fadeout" //slide, fadeout
+              autoPlayInterval="4000" //default 400
+              // touchTracking default true
+              // autoPlayDirection='rtl' or "ltr"
+              controlsStrategy="responsive"
+              // paddingLeft='0px' it shows image padding on aminate
+              disableDotsControls="true" //it remove dots
+              disableButtonsControls="true"
+              // it remove arrows oporer ta
+              // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
+              // autoPlayControls='play/pause' or "show/hide"
+            >
+              {CardInfo.map((card, i) => (
+                <ClosebyCards
+                  key={card + i}
+                  image={card.image}
+                  text={card.text}
+                  distance={card.distance}
+                />
+              ))}
+            </AliceCarousel>
+          </CardBar>
+          <CardBar>
+            <AliceCarousel
+              autoPlay
+              infinite
+              mouseTracking
+              animationType="fadeout" //slide, fadeout
+              autoPlayInterval="000" //default 400
+              // touchTracking default true
+              // autoPlayDirection='rtl' or "ltr"
+              controlsStrategy="responsive"
+              // paddingLeft='0px' it shows image padding on aminate
+              disableDotsControls="true" //it remove dots
+              disableButtonsControls="true"
+              // it remove arrows oporer ta
+              // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
+              // autoPlayControls='play/pause' or "show/hide"
+            >
+              {CardInfo.map((card, i) => (
+                <ClosebyCards
+                  key={card + i}
+                  image={card.image}
+                  text={card.text}
+                  distance={card.distance}
+                />
+              ))}
+            </AliceCarousel>
+          </CardBar>
+          <CardBar>
+            <AliceCarousel
+              autoPlay
+              infinite
+              mouseTracking
+              animationType="fadeout" //slide, fadeout
               autoPlayInterval="000" //default 400
               // touchTracking default true
               // autoPlayDirection='rtl' or "ltr"
