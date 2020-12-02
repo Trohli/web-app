@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import ClosebyCards from "./ClosebyCards/Index";
@@ -10,9 +8,6 @@ import {
   Hrl,
   ClosebyH3,
   CardSection,
-  Arrow,
-  ArrowRight,
-  ArrowLeft,
   CardBar,
 } from "./ClosebyElements";
 
@@ -56,6 +51,15 @@ function ClosebyItems() {
     },
   ];
 
+  const items = CardInfo.map((card, i) => (
+    <ClosebyCards
+      key={card + i}
+      image={card.image}
+      text={card.text}
+      distance={card.distance}
+    />
+  ));
+
   return (
     <>
       <ClosebySection>
@@ -67,11 +71,12 @@ function ClosebyItems() {
         <CardSection>
           <CardBar>
             <AliceCarousel
+              items={items}
               autoPlay
               infinite
               mouseTracking
               animationType="fadeout" //slide, fadeout
-              autoPlayInterval="4000" //default 400
+              autoPlayInterval="8000" //default 400
               // touchTracking default true
               // autoPlayDirection='rtl' or "ltr"
               controlsStrategy="responsive"
@@ -81,24 +86,16 @@ function ClosebyItems() {
               // it remove arrows oporer ta
               // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
               // autoPlayControls='play/pause' or "show/hide"
-            >
-              {CardInfo.map((card, i) => (
-                <ClosebyCards
-                  key={card + i}
-                  image={card.image}
-                  text={card.text}
-                  distance={card.distance}
-                />
-              ))}
-            </AliceCarousel>
+            />
           </CardBar>
           <CardBar>
             <AliceCarousel
+              items={items}
               autoPlay
               infinite
               mouseTracking
               animationType="fadeout" //slide, fadeout
-              autoPlayInterval="000" //default 400
+              autoPlayInterval="8100" //default 400
               // touchTracking default true
               // autoPlayDirection='rtl' or "ltr"
               controlsStrategy="responsive"
@@ -108,24 +105,16 @@ function ClosebyItems() {
               // it remove arrows oporer ta
               // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
               // autoPlayControls='play/pause' or "show/hide"
-            >
-              {CardInfo.map((card, i) => (
-                <ClosebyCards
-                  key={card + i}
-                  image={card.image}
-                  text={card.text}
-                  distance={card.distance}
-                />
-              ))}
-            </AliceCarousel>
+            />
           </CardBar>
           <CardBar>
             <AliceCarousel
+              items={items}
               autoPlay
               infinite
               mouseTracking
               animationType="fadeout" //slide, fadeout
-              autoPlayInterval="4000" //default 400
+              autoPlayInterval="8200" //default 400
               // touchTracking default true
               // autoPlayDirection='rtl' or "ltr"
               controlsStrategy="responsive"
@@ -135,24 +124,16 @@ function ClosebyItems() {
               // it remove arrows oporer ta
               // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
               // autoPlayControls='play/pause' or "show/hide"
-            >
-              {CardInfo.map((card, i) => (
-                <ClosebyCards
-                  key={card + i}
-                  image={card.image}
-                  text={card.text}
-                  distance={card.distance}
-                />
-              ))}
-            </AliceCarousel>
+            />
           </CardBar>
           <CardBar>
             <AliceCarousel
+              items={items}
               autoPlay
               infinite
               mouseTracking
               animationType="fadeout" //slide, fadeout
-              autoPlayInterval="4000" //default 400
+              autoPlayInterval="8300" //default 400
               // touchTracking default true
               // autoPlayDirection='rtl' or "ltr"
               controlsStrategy="responsive"
@@ -162,24 +143,16 @@ function ClosebyItems() {
               // it remove arrows oporer ta
               // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
               // autoPlayControls='play/pause' or "show/hide"
-            >
-              {CardInfo.map((card, i) => (
-                <ClosebyCards
-                  key={card + i}
-                  image={card.image}
-                  text={card.text}
-                  distance={card.distance}
-                />
-              ))}
-            </AliceCarousel>
+            />
           </CardBar>
           <CardBar>
             <AliceCarousel
+              items={items}
               autoPlay
               infinite
               mouseTracking
               animationType="fadeout" //slide, fadeout
-              autoPlayInterval="000" //default 400
+              autoPlayInterval="8400" //default 400
               // touchTracking default true
               // autoPlayDirection='rtl' or "ltr"
               controlsStrategy="responsive"
@@ -189,24 +162,16 @@ function ClosebyItems() {
               // it remove arrows oporer ta
               // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
               // autoPlayControls='play/pause' or "show/hide"
-            >
-              {CardInfo.map((card, i) => (
-                <ClosebyCards
-                  key={card + i}
-                  image={card.image}
-                  text={card.text}
-                  distance={card.distance}
-                />
-              ))}
-            </AliceCarousel>
+            />
           </CardBar>
           <CardBar>
             <AliceCarousel
+              items={items}
               autoPlay
               infinite
               mouseTracking
               animationType="fadeout" //slide, fadeout
-              autoPlayInterval="000" //default 400
+              autoPlayInterval="8500" //default 400
               // touchTracking default true
               // autoPlayDirection='rtl' or "ltr"
               controlsStrategy="responsive"
@@ -216,16 +181,7 @@ function ClosebyItems() {
               // it remove arrows oporer ta
               // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
               // autoPlayControls='play/pause' or "show/hide"
-            >
-              {CardInfo.map((card, i) => (
-                <ClosebyCards
-                  key={card + i}
-                  image={card.image}
-                  text={card.text}
-                  distance={card.distance}
-                />
-              ))}
-            </AliceCarousel>
+            />
           </CardBar>
         </CardSection>
       </ClosebySection>

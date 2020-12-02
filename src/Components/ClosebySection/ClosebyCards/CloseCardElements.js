@@ -10,6 +10,7 @@ export const Card = styled.div`
   width: 160px;
   margin: 0 5px;
   padding: 5px;
+  box-shadow: 0px 15px 10px #00000057;
 `;
 export const CardImg = styled.img`
   width: 100%;

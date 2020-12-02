@@ -5,7 +5,7 @@ import { Button } from "@material-ui/core";
 
 export const SlideBar = styled.div`
   position: relative;
-  height: 95vh;
+  height: 65vh;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -35,29 +35,31 @@ export const SlideContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  max-height: 360px;
+  justify-content: space-evenly;
+  max-height: 280px;
+  height: 100%;
   width: 480px;
-  margin-bottom: -80px;
   color: var(--lightTheme);
 `;
 
 export const ContentHeading = styled.h2`
   font-size: 54px;
   font-weight: 5px;
+  font: italic normal 300 55px/70px Poppins;
 `;
 export const ContentText = styled.p`
   font-size: 18px;
   font-weight: 2px;
+  font: normal normal 300 15px/23px Poppins;
 `;
 export const Btn = styled(Button)`
   border-radius: 99px !important;
   background: var(--subTheme) !important;
   border: 2px solid var(--mainTheme) !important;
-  padding: 8px !important;
+  padding: 5px !important;
   color: var(--mainTheme) !important;
-  font-size: 15px !important;
-  font-weight: 20px !important;
+  font-weight: bolder !important;
+  font: normal normal medium 20px Poppins !important;
 `;
 
 export const Arrow = styled.div`
@@ -91,11 +93,11 @@ export const ArrowLeft = styled(RiArrowLeftCircleFill)`
 `;
 
 export const Dot = styled.div`
-  padding: 10px;
+  padding: 5px;
   margin-right: 5px;
   cursor: pointer;
   border-radius: 50%;
-  border: 2px solid var(--mainTheme);
+  border: 1px solid var(--mainTheme);
   background: ${({ active }) =>
     active ? "var(--subTheme)" : "var(--subShadowTheme)"};
 `;

@@ -8,3 +8,12 @@ FaEye lightmode
 FaEyeSlash darkmode
 FaThLarge open navbar
 FaTimes close nav
+IoGlasses assesoriesicon
+import LaptopMacIcon from '@material-ui/icons/LaptopMac';
+
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports'; games
+
+font: italic normal 300 90px/136px Poppins; header font
+
+font: normal normal 300 15px/23px Poppins; header text font
+font: normal normal medium 27px/40px Poppins; btn font
