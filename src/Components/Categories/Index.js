@@ -9,6 +9,15 @@ import {
   SidebarH3,
   StoreContainer,
   StoresH3,
+  FashionIcon,
+  MobileIcon,
+  AssesoriesIcon,
+  ElectronicsIcon,
+  LaptopIcon,
+  GamesIcon,
+  GadgetsIcon,
+  FitnessIcon,
+  ExpandIcon,
 } from "./CategoriesElements";
 import SideCategory from "./SideCategory";
 import StoreCategories from "./StoreCategories";
@@ -16,42 +25,44 @@ import StoreCategories from "./StoreCategories";
 function Categories() {
   const sidebarData = [
     {
-      icon: "./images/accessoriesIcon.png",
+      icon: AssesoriesIcon,
       text: "Accessories",
     },
     {
-      icon: "./images/laptopsIcon.png",
+      icon: LaptopIcon,
       text: "Laptops",
     },
     {
-      icon: "./images/fasionIcon.png",
+      icon: FashionIcon,
       text: "Fashion",
     },
     {
-      icon: "./images/electronicsIcon.png",
+      icon: ElectronicsIcon,
       text: "Electronics",
     },
     {
-      icon: "./images/gamesIcon.png",
+      icon: GamesIcon,
       text: "Games",
     },
     {
-      icon: "./images/phoneIcon.png",
+      icon: MobileIcon,
       text: "Phones",
     },
     {
-      icon: "./images/phoneIcon.png",
-      text: "Tablets",
+      icon: GadgetsIcon,
+      text: "Gadgets",
     },
     {
-      icon: "./images/phoneIcon.png",
+      icon: FitnessIcon,
       text: "Fitness",
     },
     {
-      icon: "./images/phoneIcon.png",
+      icon: ExpandIcon,
       text: "Show more",
     },
   ];
+
+  const storeCategoryData = [{}];
 
   const responsive = {
     0: { items: 1 },

@@ -1,23 +1,33 @@
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
+import { VscDeviceMobile } from "react-icons/vsc";
+import { MdDevicesOther } from "react-icons/md";
+import { MdFitnessCenter } from "react-icons/md";
+import { CgSmartphoneChip } from "react-icons/cg";
+import { IoIosArrowDown } from "react-icons/io";
+import { IoMdWatch } from "react-icons/io";
+import { IoMdShirt } from "react-icons/io";
+import LaptopMacIcon from "@material-ui/icons/LaptopMac";
+import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
 
 export const CategorieSection = styled.section`
   display: flex;
   align-items: center;
-  margin: 20px 0;
+  justify-content: space-evenly;
+  margin: 20px auto;
   height: 100%;
+  max-width: 1300px;
   width: 100%;
   box-sizing: border-box;
-  flex-wrap: wrap;
 `;
 export const StoreCategoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 0.8;
   justify-content: space-between;
-  flex: 1;
   height: 420px;
   padding: 0 30px;
-  max-width: 1100px;
+  max-width: 1050px;
   width: 100%;
   box-sizing: border-box;
 `;
@@ -135,13 +145,15 @@ export const SidebarOption = styled.div`
   box-sizing: border-box;
   background: ${({ active }) =>
     active ? "var(--mainTheme)" : "var(--lightTheme) "};
-  color: ${({ active }) => (active ? "var(--lightTheme)" : "var(--mainTheme)")};
+  color: ${({ active }) =>
+    active ? "var(--lightTheme)" : "var(--mainTheme) !important"};
   cursor: ${({ active }) => (active ? "none" : "pointer")};
 
   &:hover {
+    transform: scale(${({ spaced }) => (spaced ? "1.04" : "1")});
     transition: all 0.2s ease-in-out;
     background: var(--mainTheme);
-    color: var(--lightTheme);
+    color: var(--lightTheme) !important;
   }
 `;
 export const SidebarH3 = styled.div`
@@ -153,4 +165,31 @@ export const SidebarImg = styled.img`
   height: 10px;
   z-index: 1;
   color: var(--lightTheme);
+`;
+export const FashionIcon = styled(IoMdShirt)`
+  font-size: 20px !important;
+`;
+export const MobileIcon = styled(VscDeviceMobile)`
+  font-size: 20px !important;
+`;
+export const GadgetsIcon = styled(MdDevicesOther)`
+  font-size: 20px !important;
+`;
+export const AssesoriesIcon = styled(IoMdWatch)`
+  font-size: 20px !important;
+`;
+export const ElectronicsIcon = styled(CgSmartphoneChip)`
+  font-size: 20px !important;
+`;
+export const LaptopIcon = styled(LaptopMacIcon)`
+  font-size: 20px !important;
+`;
+export const GamesIcon = styled(SportsEsportsIcon)`
+  font-size: 20px !important;
+`;
+export const FitnessIcon = styled(MdFitnessCenter)`
+  font-size: 20px !important;
+`;
+export const ExpandIcon = styled(IoIosArrowDown)`
+  font-size: 20px !important;
 `;

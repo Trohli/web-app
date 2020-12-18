@@ -37,7 +37,8 @@ export const HeaderSearch = styled.div`
   align-items: center;
   justify-content: center;
   height: 30px;
-  width: 550px;
+  max-width: 550px;
+  width: 100%;
   border-radius: 12px;
   background: var(--lightTheme);
 `;
@@ -55,6 +56,7 @@ export const HeaderInput = styled.input`
     outline: none;
   }
 `;
+
 export const IconContainer = styled.div`
   background: var(--subTheme);
   display: flex;

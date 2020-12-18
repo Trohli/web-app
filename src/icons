@@ -9,6 +9,18 @@ FaEyeSlash darkmode
 FaThLarge open navbar
 FaTimes close nav
 IoGlasses assesoriesicon
+RiFacebookFill facebook
+FaTwitter twitter
+RiYoutubeFill youtube
+AiFillInstagram instagramicon
+BiMailSend mailingicon
+IoChevronForward forward icons
+IoChevronBack backwards icons
+GiClothes fashion icon
+VscDeviceMobile mobile icon
+MdDevicesOther assesories icons
+GrDevice electronics icon
+import { FaBeer } from 'react-icons/fa';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports'; games

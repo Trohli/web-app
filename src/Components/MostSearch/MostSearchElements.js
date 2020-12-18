@@ -31,7 +31,7 @@ export const MostSearchH2 = styled.h2`
   font-weight: bolder;
 `;
 export const MostSearchH3 = styled.h3`
-  font-size: 16px;
+  font-size: ${({ bold }) => (bold ? "16px" : "14px")};
   height: 15px;
   display: flex;
   align-items: center;
@@ -39,6 +39,6 @@ export const MostSearchH3 = styled.h3`
   box-sizing: border-box;
   cursor: pointer;
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
-  padding: ${({ start }) => (start ? "0" : "8px")};
+  padding: ${({ start }) => (start ? "0" : "0 8px")};
   border-right: ${({ end }) => (end ? "none" : "1px solid var(--grayTheme)")};
 `;

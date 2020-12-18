@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
+import { IoMdCart } from "react-icons/io";
 
 export const TrendingSection = styled.section`
   display: flex;
   flex-direction: column;
-  height: 550px;
+  height: 1000px;
   width: 100%;
   padding: 20px 40px;
   box-sizing: border-box;
   border-radius: 1px;
+  justify-content: space-between;
   background: var(--mainTheme);
 `;
 
@@ -22,14 +24,12 @@ export const TrendingCardContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex: 1;
   padding: 10px;
   box-sizing: border-box;
   flex-wrap: wrap;
 `;
 
 export const CardBar = styled.div`
-  height: 100%;
   width: 270px;
   display: flex;
   overflow: hidden;
@@ -37,9 +37,10 @@ export const CardBar = styled.div`
 `;
 
 export const Card = styled.div`
-  height: 100%;
-  width: 260px;
-  padding: 20px;
+  height: 360px;
+  max-width: 260px;
+  width: 100%;
+  padding: 10px 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -47,7 +48,12 @@ export const Card = styled.div`
   justify-content: space-evenly;
   background: var(--lightTheme);
 `;
-
+export const CardRow = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+`;
 export const CardH3 = styled.h3`
   font-size: 18px;
   font-weight: bold;
@@ -102,4 +108,13 @@ export const TrendingNav = styled.div`
   font-weight: bold;
   background: var(--lightTheme);
   color: var(--mainTheme);
+`;
+export const AddCartIcon = styled(IoMdCart)`
+  font-size: 20px !important;
+  color: var(--mainTheme);
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.4);
+  }
 `;

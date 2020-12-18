@@ -1,5 +1,12 @@
 import React from "react";
-import { Card, CardH3, CardImg, CardBtn } from "./TrendingElements";
+import {
+  Card,
+  CardH3,
+  CardImg,
+  CardBtn,
+  CardRow,
+  AddCartIcon,
+} from "./TrendingElements";
 
 function TrendingCard({ name, image, price }) {
   return (
@@ -8,7 +15,10 @@ function TrendingCard({ name, image, price }) {
         <CardH3> {name} </CardH3>
         <CardImg src={image} />
         <CardH3> {price} </CardH3>
-        <CardBtn>Buy</CardBtn>
+        <CardRow>
+          <CardBtn>Buy</CardBtn>
+          <AddCartIcon />
+        </CardRow>
       </Card>
     </>
   );
