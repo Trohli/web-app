@@ -16,7 +16,6 @@ function Home() {
         <Categories />
         <TrendingArea />
       </ProductContainer>
-      <MostSearch />
       <Footer />
     </>
   );

@@ -14,6 +14,16 @@ export const HeaderBg = styled.div`
   position: sticky;
   top: 0;
   z-index: 100;
+
+  @media screen and (max-width: 768px) {
+    height: 40px;
+  }
+  @media screen and (max-width: 540px) {
+    height: 35px;
+  }
+  @media screen and (max-width: 375px) {
+    height: 30px;
+  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -21,6 +31,9 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: 1250px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
   width: 100%;
   text-align: center;
 `;
@@ -29,6 +42,16 @@ export const HeaderLogo = styled.img`
   object-fit: contain;
   height: 40px;
   flex: 0.1;
+
+  @media screen and (max-width: 768px) {
+    height: 30px;
+  }
+  @media screen and (max-width: 540px) {
+    height: 20px;
+  }
+  @media screen and (max-width: 375px) {
+    height: 18px;
+  }
 `;
 
 export const HeaderSearch = styled.div`
@@ -39,17 +62,30 @@ export const HeaderSearch = styled.div`
   height: 30px;
   max-width: 550px;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 9px;
   background: var(--lightTheme);
+
+  @media screen and (max-width: 768px) {
+    max-width: 450px;
+    height: 25px;
+  }
+  @media screen and (max-width: 540px) {
+    max-width: 200px;
+    height: 22px;
+  }
+  @media screen and (max-width: 375px) {
+    max-width: 160px;
+    height: 20px;
+  }
 `;
 
 export const HeaderInput = styled.input`
   padding: 10px;
   background: transparent;
   border: none;
-  height: 90%;
   flex: 0.9;
-  padding: 0 15px;
+  width: 100%;
+  padding: 0 10px;
   font-size: 15px;
 
   &:focus {
@@ -63,7 +99,7 @@ export const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 9px 9px 0;
   flex: 0.1;
 `;
 
@@ -77,6 +113,10 @@ export const HeaderRight = styled.div`
   align-items: center;
   justify-content: space-between;
   flex: 0.2;
+
+  @media screen and (max-width: 768px) {
+    flex: 0.3;
+  }
 `;
 
 export const HeaderProfile = styled.div`
@@ -85,7 +125,21 @@ export const HeaderProfile = styled.div`
 `;
 
 export const HeaderAvatar = styled(Avatar)`
-  font-size: 20px !important;
+  height: 40px !important;
+  width: 40px !important;
+
+  @media screen and (max-width: 768px) {
+    height: 30px !important;
+    width: 30px !important;
+  }
+  @media screen and (max-width: 540px) {
+    height: 25px !important;
+    width: 25px !important;
+  }
+  @media screen and (max-width: 375px) {
+    height: 20px !important;
+    width: 20px !important;
+  }
 `;
 
 export const ProfileText = styled.h3`
@@ -101,16 +155,29 @@ export const HeaderBasketContainer = styled.div`
 export const BasketIcon = styled(ShoppingBasketIcon)`
   font-size: 30px !important;
   color: var(--lightTheme) !important;
+
+  @media screen and (max-width: 540px) {
+    font-size: 25px !important;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 20px !important;
+  }
 `;
 
 export const LikeIcon = styled(FavoriteBorderIcon)`
   font-size: 30px !important;
   color: var(--lightTheme) !important;
+
+  @media screen and (max-width: 540px) {
+    font-size: 25px !important;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 18px !important;
+  }
 `;
 
 export const CountContainer = styled.div`
   display: felx;
-
   background: var(--subTheme);
   border-radius: 999px;
   border: 1px solid var(--mainTheme);
@@ -124,9 +191,19 @@ export const CountContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  @media screen and (max-width: 540px) {
+    width: 8px;
+    height: 8px;
+    padding: 2px;
+  }
 `;
 
 export const Count = styled.p`
   font-size: 12px;
   color: var(--lightTheme);
+
+  @media screen and (max-width: 540px) {
+    font-size: 10px;
+  }
 `;

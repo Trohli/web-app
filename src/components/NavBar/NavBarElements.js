@@ -8,25 +8,39 @@ export const NavBg = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
+
+  @media screen and (max-width: 540px) {
+    height: 25px;
+  }
+  @media screen and (max-width: 375px) {
+    height: 20px;
+  }
 `;
 export const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1175px;
+  padding: 0 20px;
+  box-sizing: border-box;
   width: 100%;
   text-align: center;
 `;
 export const NavUl = styled.div`
   display: flex;
-  justify-content: flex-start;
+  max-width: 220px;
+  justify-content: space-evenly;
+  align-items: center;
   flex: 0.9;
 `;
 
 export const NavLi = styled.p`
-  margin-right: 10px;
   font-size: 15px;
   font-weight: 2px;
+
+  @media screen and (max-width: 540px) {
+    font-size: 12px;
+  }
 `;
 
 export const NavRight = styled.div`
@@ -43,6 +57,10 @@ export const NavIcon = styled.div`
 export const NavText = styled.p`
   font-size: 15px;
   font-weight: 2px;
+
+  @media screen and (max-width: 540px) {
+    font-size: 12px;
+  }
 `;
 export const HelpIcon = styled(HelpOutlineIcon)`
   font-size: 12px !important ;

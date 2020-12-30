@@ -24,7 +24,7 @@ function Header() {
           <HeaderLogo src="./images/Trohli-logo.png" />
 
           <HeaderSearch>
-            <HeaderInput placeholder="Search for products" />
+            <HeaderInput />
             <IconContainer>
               <SearchEngIcon />
             </IconContainer>

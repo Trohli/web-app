@@ -8,7 +8,7 @@ import { RiFacebookFill } from "react-icons/ri";
 export const FooterSection = styled.section`
   background: var(--darkTheme);
   color: var(--lightTheme);
-  height: 300px;
+  height: 100%;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
@@ -19,35 +19,35 @@ export const FooterSection = styled.section`
 
 export const FooterTop = styled.div`
   display: flex;
-  height: 260px;
-`;
-export const FooterTopContent = styled.div`
-  padding: 30px 60px;
-  box-sizing: border-box;
-  display: flex;
-  width: 100%;
   height: 100%;
-  margin: 0 auto;
 `;
 
 export const FooterTopGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  padding: 15px 30px;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 540px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const FooterColunm = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
 `;
 export const FooterLetter = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
 `;
 export const FooterRow = styled.div`
   display: flex;
@@ -77,19 +77,19 @@ export const NewsletterForm = styled.form`
   align-items: center;
   justify-content: center;
   height: 30px;
-  max-width: 300px;
   width: 100%;
   border-radius: 7px;
   background: var(--lightTheme);
 `;
 export const NewsLetterInput = styled.input`
-  padding: 10px;
   background: transparent;
   border: none;
   height: 90%;
   flex: 0.8;
   padding: 0 15px;
   font-size: 15px;
+  box-sizing: border-box;
+  width: 100%;
 
   &:focus {
     outline: none;

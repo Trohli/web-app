@@ -5,47 +5,54 @@ import { IoMdCart } from "react-icons/io";
 export const TrendingSection = styled.section`
   display: flex;
   flex-direction: column;
-  height: 1000px;
   width: 100%;
   padding: 20px 40px;
   box-sizing: border-box;
   border-radius: 1px;
-  justify-content: space-between;
   background: var(--mainTheme);
 `;
 
 export const TrendingH2 = styled.h2`
   font-size: 20px;
   font-weight: bolder;
+  margin-bottom: 15px;
   color: var(--subTheme);
 `;
 
 export const TrendingCardContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+  padding: 5px;
   box-sizing: border-box;
-  flex-wrap: wrap;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 540px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const CardBar = styled.div`
-  width: 270px;
+  width: 100%;
   display: flex;
   overflow: hidden;
   align-items: center;
 `;
 
 export const Card = styled.div`
-  height: 360px;
-  max-width: 260px;
+  height: 400px;
   width: 100%;
   padding: 10px 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background: var(--lightTheme);
 `;
 export const CardRow = styled.div`
@@ -61,8 +68,8 @@ export const CardH3 = styled.h3`
 `;
 
 export const CardImg = styled.img`
-  width: 200px;
-  object-fit: contain;
+  width: 100%;
+  height: 260px;
 `;
 
 export const CardBtn = styled(Button)`
@@ -78,6 +85,7 @@ export const CardBtn = styled(Button)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
     background: ${({ main }) =>
       main ? " var(--mainTheme)" : "var(--lightTheme)  "} !important;
     color: ${({ main }) =>
@@ -90,6 +98,7 @@ export const TrendingNavFooter = styled.div`
   align-items: center;
   justify-content: center;
   color: var(--lightTheme);
+  margin-top: 15px;
   height: 30px;
   width: 100%;
 `;

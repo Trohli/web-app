@@ -8,6 +8,7 @@ import {
   SidebarOption,
   SidebarH3,
   StoreContainer,
+  StoreSlider,
   StoresH3,
   FashionIcon,
   MobileIcon,
@@ -62,14 +63,89 @@ function Categories() {
     },
   ];
 
-  const storeCategoryData = [{}];
+  const storeCategoryData = [
+    {
+      store: "st.Kicks",
+      storeImg: "./images/sk.png",
+      tagA: "shoes",
+      tagB: "clothes",
+      tagC: "rings",
+      tagD: "fashion",
+    },
+    {
+      store: "st.Kicks",
+      storeImg: "./images/sk.png",
+      tagA: "shoes",
+      tagB: "clothes",
+      tagC: "rings",
+      tagD: "fashion",
+    },
+    {
+      store: "st.Kicks",
+      storeImg: "./images/sk.png",
+      tagA: "shoes",
+      tagB: "clothes",
+      tagC: "rings",
+      tagD: "fashion",
+    },
+    {
+      store: "st.Kicks",
+      storeImg: "./images/sk.png",
+      tagA: "shoes",
+      tagB: "clothes",
+      tagC: "rings",
+      tagD: "fashion",
+    },
+    {
+      store: "st.Kicks",
+      storeImg: "./images/sk.png",
+      tagA: "shoes",
+      tagB: "clothes",
+      tagC: "rings",
+      tagD: "fashion",
+    },
+    {
+      store: "st.Kicks",
+      storeImg: "./images/sk.png",
+      tagA: "shoes",
+      tagB: "clothes",
+      tagC: "rings",
+      tagD: "fashion",
+    },
+  ];
 
   const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 3 },
-    1100: { items: 4 },
+    540: { items: 1 },
+    622: { items: 2 },
+    770: { items: 3 },
+    1025: { items: 4 },
   };
+
+  const NearbystoreItems = storeCategoryData.map(
+    ({ store, storeImg, tagA, tagB, tagC, tagD }) => (
+      <StoreCategories
+        store={store}
+        storeImg={storeImg}
+        tagA={tagA}
+        tagB={tagB}
+        tagC={tagC}
+        tagD={tagD}
+      />
+    )
+  );
+  const NewstoreItems = storeCategoryData.map(
+    ({ store, storeImg, tagA, tagB, tagC, tagD }) => (
+      <StoreCategories
+        main
+        store={store}
+        storeImg={storeImg}
+        tagA={tagA}
+        tagB={tagB}
+        tagC={tagC}
+        tagD={tagD}
+      />
+    )
+  );
 
   return (
     <>
@@ -85,41 +161,37 @@ function Categories() {
         <StoreCategoriesContainer>
           <StoreContainer main>
             <StoresH3>Nearby Stores</StoresH3>
-            <AliceCarousel
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8000"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            >
-              <StoreCategories />
-              <StoreCategories />
-              <StoreCategories />
-              <StoreCategories />
-            </AliceCarousel>
+            <StoreSlider>
+              <AliceCarousel
+                autoPlay
+                infinite
+                mouseTracking
+                items={NearbystoreItems}
+                animationType="fadeout"
+                autoPlayInterval="8000"
+                controlsStrategy="responsive"
+                disableDotsControls="true"
+                disableButtonsControls="true"
+                responsive={responsive}
+              />
+            </StoreSlider>
           </StoreContainer>
           <StoreContainer>
             <StoresH3 main>New Stores</StoresH3>
-            <AliceCarousel
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8000"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            >
-              <StoreCategories main />
-              <StoreCategories main />
-              <StoreCategories main />
-              <StoreCategories main />
-            </AliceCarousel>
+            <StoreSlider>
+              <AliceCarousel
+                autoPlay
+                infinite
+                mouseTracking
+                items={NewstoreItems}
+                animationType="fadeout"
+                autoPlayInterval="8000"
+                controlsStrategy="responsive"
+                disableDotsControls="true"
+                disableButtonsControls="true"
+                responsive={responsive}
+              />
+            </StoreSlider>
           </StoreContainer>
         </StoreCategoriesContainer>
       </CategorieSection>

@@ -12,24 +12,33 @@ import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
 
 export const CategorieSection = styled.section`
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   margin: 20px auto;
   height: 100%;
   max-width: 1300px;
   width: 100%;
   box-sizing: border-box;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 export const StoreCategoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 0.8;
   justify-content: space-between;
-  height: 420px;
   padding: 0 30px;
   max-width: 1050px;
   width: 100%;
   box-sizing: border-box;
+
+  @media screen and (max-width: 1200px) {
+    flex: 1;
+    max-width: 1300px;
+    width: 100%;
+    padding: 0;
+  }
 `;
 export const StoreContainer = styled.div`
   background: ${({ main }) =>
@@ -39,11 +48,15 @@ export const StoreContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  max-height: 220px;
-  height: 100%;
-  margin-bottom: 20px;
+  margin: 10px 0;
 `;
+export const StoreSlider = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+
 export const StoreTag = styled.div`
   display: flex;
   flex-direction: column;
@@ -80,6 +93,7 @@ export const StoreImg = styled.img`
 `;
 
 export const StoresH3 = styled.div`
+  margin-bottom: 10px;
   font-size: ${({ small }) => (small ? "16px" : "20px")};
   font-weight: ${({ small }) => (small ? "bold" : "bolder")};
   color: ${({ main }) => (main ? "var(--mainTheme) " : "var(--subTheme) ")};
@@ -128,19 +142,26 @@ export const SideCategoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 0.2;
-  padding: 10px 20px;
-  height: 450px;
+  padding: 10px 10px;
+  justify-content: space-between;
   box-sizing: border-box;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+  }
 `;
 
 export const SidebarOption = styled.div`
   width: 100%;
+  min-width: 150px;
   height: 30px;
   border-radius: 8px;
   padding: 10px;
-  margin: 5px;
   display: flex;
   align-items: center;
+  margin: 0 5px;
   justify-content: ${({ spaced }) => (spaced ? "space-between" : "center")};
   box-sizing: border-box;
   background: ${({ active }) =>

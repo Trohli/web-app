@@ -10,24 +10,24 @@ import {
   StoresContentH3,
 } from "./CategoriesElements";
 
-function StoreCategories({ main }) {
+function StoreCategories({ main, tagA, tagB, tagC, tagD, store, storeImg }) {
   return (
     <>
       <StoreTag main={main}>
         <StoreTagTop>
-          <StoreImg src="./images/sk.png" />
+          <StoreImg src={storeImg} />
           <StoreTagTopContent>
             <StoresContentH3 small main={main}>
-              St.Kicks
+              {store}
             </StoresContentH3>
             <StoreBtn main={main}>Visit</StoreBtn>
           </StoreTagTopContent>
         </StoreTagTop>
         <StoreTagButtom>
-          <StoreTagButtomH4 main={main}>Shoes</StoreTagButtomH4>
-          <StoreTagButtomH4 main={main}>Bags</StoreTagButtomH4>
-          <StoreTagButtomH4 main={main}>Clothings</StoreTagButtomH4>
-          <StoreTagButtomH4 main={main}>Fasiion</StoreTagButtomH4>
+          <StoreTagButtomH4 main={main}>{tagA}</StoreTagButtomH4>
+          <StoreTagButtomH4 main={main}>{tagB}</StoreTagButtomH4>
+          <StoreTagButtomH4 main={main}>{tagC}</StoreTagButtomH4>
+          <StoreTagButtomH4 main={main}>{tagD}</StoreTagButtomH4>
         </StoreTagButtom>
       </StoreTag>
     </>

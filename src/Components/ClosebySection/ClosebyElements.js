@@ -5,8 +5,8 @@ export const ClosebySection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: Space-between;
-  height: 250px;
+  justify-content: center;
+  height: max-content;
   width: 100%;
   margin-bottom: 20px;
 `;
@@ -16,22 +16,25 @@ export const CardSection = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 16px;
+  align-items: center;
   box-sizing: border-box;
 
-  @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
   }
   @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 540px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
 export const CardBar = styled.div`
   height: 100%;
+  width: 100%;
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -45,13 +48,13 @@ export const Card = styled.div`
   justify-content: space-between;
   position: relative;
   height: 180px;
-  width: 150px;
-  margin: 0 5px;
+  width: 100%;
   padding: 5px;
+  box-sizing: border-box;
 `;
 export const CardImg = styled.img`
   width: 100%;
-  height: 140px;
+  height: 120px;
 `;
 export const CardText = styled.h4`
   font-size: 18px;
@@ -72,18 +75,26 @@ export const CardM = styled.p`
 export const ClosebyHeading = styled.div`
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  width: 100%;
 `;
 export const ClosebyH3 = styled.div`
   font-size: 20px;
   font-weight: bolder;
   color: var(--mainTheme);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 520px) {
+    font-size: 16px;
+  }
 `;
 export const Hrl = styled.hr`
   border-top: 2px solid var(--mainTheme);
-  border-radius: 99px;
   margin: 0 25px;
-  width: 100px;
+  max-width: 100px;
+  width: 100%;
 `;
 
 export const AddCartIcon = styled(IoMdCart)`

@@ -1,6 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+
 import {
   SlideBar,
   SliderContent,
@@ -14,6 +17,7 @@ import {
   ContentHeading,
   ContentText,
   Btn,
+  HeroSlider,
 } from "./HeroElements";
 
 function HeroSection() {
@@ -97,9 +101,36 @@ function HeroSection() {
     },
   ];
 
+  const responsive = {
+    0: { items: 1 },
+  };
+
+  const items = slides.map((slides, i) => (
+    <Slide key={slides + i} content={slides.image}>
+      <SlideContent>
+        <ContentHeading>{slides.heading}</ContentHeading>
+        <ContentText>{slides.text}</ContentText>
+        <Btn>Shop Now</Btn>
+      </SlideContent>
+    </Slide>
+  ));
+
   return (
-    <div>
-      <SlideBar>
+    <>
+      <HeroSlider>
+        <AliceCarousel
+          autoPlay="true"
+          infinite
+          mouseTracking
+          items={items}
+          animationType="fadeout"
+          autoPlayInterval="6000"
+          controlsStrategy="responsive"
+          disableDotsControls="true"
+          disableButtonsControls="true"
+        />
+      </HeroSlider>
+      {/* <SlideBar>
         <SliderContent
           translate={translate}
           transition={transition}
@@ -128,8 +159,8 @@ function HeroSection() {
             <Dot key={slide} active={activeIndex === i} />
           ))}
         </Dots>
-      </SlideBar>
-    </div>
+      </SlideBar> */}
+    </>
   );
 }
 

@@ -3,27 +3,24 @@ import styled from "styled-components";
 export const MostSearchSection = styled.section`
   background: var(--lightTheme);
   color: var(--grayTheme);
-  height: 220px;
+  height: 100%;
   width: 100%;
-  padding: 10px 60px;
+  padding: 15px 60px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
 `;
 export const SearchKeyWordsContainer = styled.div`
-  display: Flex;
-  flex-direction: column;
-  flex: 0.7;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
   width: 100%;
-  margin: 0 auto;
-  justify-content: space-evenly;
-  box-sizing: border-box;
 `;
 export const KeyWordRow = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const MostSearchH2 = styled.h2`

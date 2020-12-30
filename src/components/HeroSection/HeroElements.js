@@ -3,24 +3,8 @@ import { RiArrowRightCircleFill } from "react-icons/ri";
 import { RiArrowLeftCircleFill } from "react-icons/ri";
 import { Button } from "@material-ui/core";
 
-export const SlideBar = styled.div`
-  position: relative;
-  height: 65vh;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-`;
-
-export const SliderContent = styled.div`
-  transform: translateX(-${({ translate }) => translate}px);
-  transition: transform ease-out ${({ transition }) => transition}s;
-  height: 100%;
-  width: ${({ width }) => width}px;
-  display: flex;
-`;
-
 export const Slide = styled.div`
-  height: 100%;
+  height: 70vh;
   width: 100%;
   background-image: url("${({ content }) => content}");
   background-size: cover;
@@ -36,10 +20,20 @@ export const SlideContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  max-height: 280px;
+  max-height: 320px;
   height: 100%;
-  width: 480px;
+  max-width: 500px;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
   color: var(--lightTheme);
+`;
+
+export const HeroSlider = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `;
 
 export const ContentHeading = styled.h2`

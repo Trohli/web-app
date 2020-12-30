@@ -39,6 +39,105 @@ function TrendingArea() {
     },
   ];
 
+  const CardData = [
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+    [
+      {
+        name: "Redimi Note 7",
+        image: "./images/phone.png",
+        price: "$1,400",
+        id: "212",
+      },
+    ],
+  ];
+
   const cards = items.map(({ name, image, price, id }) => (
     <TrendingCard name={name} image={image} price={price} key={id} />
   ));
@@ -49,127 +148,21 @@ function TrendingArea() {
         <TrendingH2>Trending in Your Area</TrendingH2>
         <div>
           <TrendingCardContainer>
-            <CardBar>
-              <AliceCarousel
-                items={cards}
-                autoPlay
-                infinite
-                mouseTracking
-                animationType="fadeout"
-                autoPlayInterval="8000"
-                controlsStrategy="responsive"
-                disableButtonsControls="true"
-                // it remove arrows oporer ta
-                // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
-                // autoPlayControls='play/pause' or "show/hide"
-              />
-            </CardBar>
-            <CardBar>
-              <AliceCarousel
-                items={cards}
-                autoPlay
-                infinite
-                mouseTracking
-                animationType="fadeout"
-                autoPlayInterval="8000"
-                controlsStrategy="responsive"
-                disableButtonsControls="true"
-                // it remove arrows oporer ta
-                // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
-                // autoPlayControls='play/pause' or "show/hide"
-              />
-            </CardBar>
-            <CardBar>
-              <AliceCarousel
-                items={cards}
-                autoPlay
-                infinite
-                mouseTracking
-                animationType="fadeout"
-                autoPlayInterval="8000"
-                controlsStrategy="responsive"
-                disableButtonsControls="true"
-                // it remove arrows oporer ta
-                // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
-                // autoPlayControls='play/pause' or "show/hide"
-              />
-            </CardBar>
-            <CardBar>
-              <AliceCarousel
-                items={cards}
-                autoPlay
-                infinite
-                mouseTracking
-                animationType="fadeout"
-                autoPlayInterval="8000"
-                controlsStrategy="responsive"
-                disableButtonsControls="true"
-                // it remove arrows oporer ta
-                // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
-                // autoPlayControls='play/pause' or "show/hide"
-              />
-            </CardBar>
-
-            <CardBar>
-              <AliceCarousel
-                items={cards}
-                autoPlay
-                infinite
-                mouseTracking
-                animationType="fadeout"
-                autoPlayInterval="8000"
-                controlsStrategy="responsive"
-                disableButtonsControls="true"
-                // it remove arrows oporer ta
-                // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
-                // autoPlayControls='play/pause' or "show/hide"
-              />
-            </CardBar>
-            <CardBar>
-              <AliceCarousel
-                items={cards}
-                autoPlay
-                infinite
-                mouseTracking
-                animationType="fadeout"
-                autoPlayInterval="8000"
-                controlsStrategy="responsive"
-                disableButtonsControls="true"
-                // it remove arrows oporer ta
-                // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
-                // autoPlayControls='play/pause' or "show/hide"
-              />
-            </CardBar>
-            <CardBar>
-              <AliceCarousel
-                items={cards}
-                autoPlay
-                infinite
-                mouseTracking
-                animationType="fadeout"
-                autoPlayInterval="8000"
-                controlsStrategy="responsive"
-                disableButtonsControls="true"
-                // it remove arrows oporer ta
-                // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
-                // autoPlayControls='play/pause' or "show/hide"
-              />
-            </CardBar>
-            <CardBar>
-              <AliceCarousel
-                items={cards}
-                autoPlay
-                infinite
-                mouseTracking
-                animationType="fadeout"
-                autoPlayInterval="8000"
-                controlsStrategy="responsive"
-                disableButtonsControls="true"
-                // it remove arrows oporer ta
-                // autoPlayStrategy='default' or 'none' (on hover default emits autoplay)
-                // autoPlayControls='play/pause' or "show/hide"
-              />
-            </CardBar>
+            {CardData.map(({ name, image, price, id }) => (
+              <CardBar>
+                <AliceCarousel
+                  items={cards}
+                  autoPlay
+                  infinite
+                  mouseTracking
+                  animationType="fadeout"
+                  autoPlayInterval="8000"
+                  controlsStrategy="responsive"
+                  disableButtonsControls
+                  disableDotsControls
+                />
+              </CardBar>
+            ))}
           </TrendingCardContainer>
         </div>
         <TrendingNavFooter>
