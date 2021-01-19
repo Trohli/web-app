@@ -63,7 +63,7 @@ export const HeaderSearch = styled.div`
   max-width: 550px;
   width: 100%;
   border-radius: 9px;
-  background: var(--lightTheme);
+  background: #fff;
 
   @media screen and (max-width: 768px) {
     max-width: 450px;
@@ -80,12 +80,11 @@ export const HeaderSearch = styled.div`
 `;
 
 export const HeaderInput = styled.input`
-  padding: 10px;
   background: transparent;
   border: none;
   flex: 0.9;
   width: 100%;
-  padding: 0 10px;
+  padding: 5px 10px;
   font-size: 15px;
 
   &:focus {

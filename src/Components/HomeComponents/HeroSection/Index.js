@@ -1,18 +1,9 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 import {
-  SlideBar,
-  SliderContent,
   Slide,
-  Arrow,
-  ArrowLeft,
-  ArrowRight,
-  Dot,
-  Dots,
   SlideContent,
   ContentHeading,
   ContentText,
@@ -21,55 +12,6 @@ import {
 } from "./HeroElements";
 
 function HeroSection() {
-  const ScreenWidth = () => window.innerWidth;
-
-  const [state, setState] = useState({
-    translate: 0,
-    transition: 0.45,
-    activeIndex: 0,
-  });
-
-  useEffect(() => {
-    const play = setInterval(() => nextSlide(), 6000);
-    return () => {
-      clearInterval(play);
-    };
-  }, [state]);
-
-  const { translate, transition, activeIndex } = state;
-
-  const nextSlide = () => {
-    if (activeIndex === slides.length - 1) {
-      return setState({
-        ...state,
-        translate: 0,
-        activeIndex: 0,
-      });
-    }
-
-    setState({
-      ...state,
-      activeIndex: activeIndex + 1,
-      translate: (activeIndex + 1) * ScreenWidth(),
-    });
-  };
-
-  const prevSlide = () => {
-    if (activeIndex === 0) {
-      return setState({
-        ...state,
-        translate: (slides.length - 1) * ScreenWidth(),
-        activeIndex: slides.length - 1,
-      });
-    }
-
-    setState({
-      ...state,
-      activeIndex: activeIndex - 1,
-      translate: (activeIndex - 1) * ScreenWidth(),
-    });
-  };
-
   const slides = [
     {
       image:
@@ -101,10 +43,6 @@ function HeroSection() {
     },
   ];
 
-  const responsive = {
-    0: { items: 1 },
-  };
-
   const items = slides.map((slides, i) => (
     <Slide key={slides + i} content={slides.image}>
       <SlideContent>
@@ -130,36 +68,6 @@ function HeroSection() {
           disableButtonsControls="true"
         />
       </HeroSlider>
-      {/* <SlideBar>
-        <SliderContent
-          translate={translate}
-          transition={transition}
-          width={ScreenWidth() * slides.length}
-        >
-          {slides.map((slides, i) => (
-            <Slide key={slides + i} content={slides.image}>
-              <SlideContent>
-                <ContentHeading>{slides.heading}</ContentHeading>
-                <ContentText>{slides.text}</ContentText>
-                <Btn>Shop Now</Btn>
-              </SlideContent>
-            </Slide>
-          ))}
-        </SliderContent>
-
-        <Arrow onClick={nextSlide} right>
-          <ArrowRight />
-        </Arrow>
-
-        <Arrow>
-          <ArrowLeft onClick={prevSlide} />
-        </Arrow>
-        <Dots>
-          {slides.map((slide, i) => (
-            <Dot key={slide} active={activeIndex === i} />
-          ))}
-        </Dots>
-      </SlideBar> */}
     </>
   );
 }

@@ -61,7 +61,7 @@ export const StoreTag = styled.div`
   display: flex;
   flex-direction: column;
   height: 130px;
-  width: 220px;
+  width: 95%;
   margin-bottom: 10px;
   margin-left: 10px;
   padding: 10px;

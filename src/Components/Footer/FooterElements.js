@@ -151,7 +151,7 @@ export const Footerdiv = styled.div`
 `;
 
 export const FooterButtom = styled.div`
-  background: var(--grayTheme);
+  background: var(--subgrayTheme);
   height: 40px;
 `;
 
@@ -167,4 +167,5 @@ export const FooterButtomContent = styled.div`
 export const FooterH3 = styled.h3`
   font-size: ${({ big }) => (big ? "16px" : "14px")};
   font-weight: ${({ bold }) => (bold ? "bolder" : "normal")};
+  cursor: normal;
 `;

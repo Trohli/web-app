@@ -51,10 +51,12 @@ export const Card = styled.div`
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
+  border-radius: 4px;
 `;
 export const CardImg = styled.img`
   width: 100%;
   height: 120px;
+  border-radius: 4px;
 `;
 export const CardText = styled.h4`
   font-size: 18px;

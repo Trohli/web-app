@@ -1,4 +1,5 @@
 import React from "react";
+import { PageLinks } from "../GenComponent";
 import {
   HeaderBg,
   HeaderContainer,
@@ -21,7 +22,9 @@ function Header() {
     <>
       <HeaderBg>
         <HeaderContainer>
-          <HeaderLogo src="./images/Trohli-logo.png" />
+          <PageLinks to="/">
+            <HeaderLogo src="./images/Trohli-logo.png" />
+          </PageLinks>
 
           <HeaderSearch>
             <HeaderInput />
@@ -38,12 +41,14 @@ function Header() {
               </CountContainer>
             </HeaderBasketContainer>
 
-            <HeaderBasketContainer>
-              <BasketIcon />
-              <CountContainer>
-                <Count>0</Count>
-              </CountContainer>
-            </HeaderBasketContainer>
+            <PageLinks to="/checkout">
+              <HeaderBasketContainer>
+                <BasketIcon />
+                <CountContainer>
+                  <Count>0</Count>
+                </CountContainer>
+              </HeaderBasketContainer>
+            </PageLinks>
 
             <HeaderAvatar />
           </HeaderRight>

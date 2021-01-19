@@ -10,13 +10,14 @@ export const TrendingSection = styled.section`
   box-sizing: border-box;
   border-radius: 1px;
   background: var(--mainTheme);
+  border-radius: 4px;
 `;
 
 export const TrendingH2 = styled.h2`
   font-size: 20px;
   font-weight: bolder;
   margin-bottom: 15px;
-  color: var(--subTheme);
+  color: var(--lightTheme);
 `;
 
 export const TrendingCardContainer = styled.div`
@@ -48,6 +49,7 @@ export const Card = styled.div`
   height: 400px;
   width: 100%;
   padding: 10px 20px;
+  border-radius: 4px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

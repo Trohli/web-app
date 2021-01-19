@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ProductContainer = styled.section`
   padding: 40px 20px;
@@ -9,4 +10,16 @@ export const ProductContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const AppBody = styled.div`
+  width: 100%;
+  background: var(--lightTheme);
+`;
+
+export const PageLinks = styled(Link)`
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 `;
