@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { PageLinks } from "../GenComponent";
+import SideNav from "../SideNav/Index";
 import {
+  HeaderComponent,
   HeaderBg,
   HeaderContainer,
   HeaderInput,
@@ -13,47 +15,56 @@ import {
   BasketIcon,
   CountContainer,
   Count,
-  HeaderAvatar,
   LikeIcon,
+  HandlebarsIcon,
+  CloseHandleBars,
+  NavIconContainer,
 } from "./HeaderElements";
 
 function Header() {
+  const [openNav, setOpenNav] = useState(false);
+
   return (
     <>
-      <HeaderBg>
-        <HeaderContainer>
-          <PageLinks to="/">
-            <HeaderLogo src="./images/Trohli-logo.png" />
-          </PageLinks>
+      <HeaderComponent>
+        <HeaderBg>
+          <HeaderContainer>
+            <PageLinks to="/">
+              <HeaderLogo src="./images/Trohli-logo.png" />
+            </PageLinks>
 
-          <HeaderSearch>
-            <HeaderInput />
-            <IconContainer>
-              <SearchEngIcon />
-            </IconContainer>
-          </HeaderSearch>
+            <HeaderSearch>
+              <HeaderInput />
+              <IconContainer>
+                <SearchEngIcon />
+              </IconContainer>
+            </HeaderSearch>
 
-          <HeaderRight>
-            <HeaderBasketContainer>
-              <LikeIcon />
-              <CountContainer>
-                <Count>0</Count>
-              </CountContainer>
-            </HeaderBasketContainer>
-
-            <PageLinks to="/checkout">
+            <HeaderRight>
               <HeaderBasketContainer>
-                <BasketIcon />
+                <LikeIcon />
                 <CountContainer>
                   <Count>0</Count>
                 </CountContainer>
               </HeaderBasketContainer>
-            </PageLinks>
 
-            <HeaderAvatar />
-          </HeaderRight>
-        </HeaderContainer>
-      </HeaderBg>
+              <PageLinks to="/checkout">
+                <HeaderBasketContainer>
+                  <BasketIcon />
+                  <CountContainer>
+                    <Count>0</Count>
+                  </CountContainer>
+                </HeaderBasketContainer>
+              </PageLinks>
+
+              <NavIconContainer onClick={() => setOpenNav(!openNav)}>
+                {openNav ? <CloseHandleBars /> : <HandlebarsIcon />}
+              </NavIconContainer>
+            </HeaderRight>
+          </HeaderContainer>
+        </HeaderBg>
+        <SideNav openNav={openNav} />
+      </HeaderComponent>
     </>
   );
 }

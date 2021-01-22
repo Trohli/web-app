@@ -2,8 +2,19 @@ import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import { Avatar } from "@material-ui/core";
+import { FaBars, FaTimes } from "react-icons/fa";
 
+export const HeaderComponent = styled.div`
+ display:flex;
+ flex:direction:colunm;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width:100%;
+`;
+export const NavIconContainer = styled.div`
+  cursor: pointer;
+`;
 export const HeaderBg = styled.div`
   background: var(--mainTheme);
   height: 50px;
@@ -11,9 +22,7 @@ export const HeaderBg = styled.div`
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid var(--lightTheme);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  width: 100%;
 
   @media screen and (max-width: 768px) {
     height: 40px;
@@ -123,24 +132,6 @@ export const HeaderProfile = styled.div`
   align-item: center;
 `;
 
-export const HeaderAvatar = styled(Avatar)`
-  height: 40px !important;
-  width: 40px !important;
-
-  @media screen and (max-width: 768px) {
-    height: 30px !important;
-    width: 30px !important;
-  }
-  @media screen and (max-width: 540px) {
-    height: 25px !important;
-    width: 25px !important;
-  }
-  @media screen and (max-width: 375px) {
-    height: 20px !important;
-    width: 20px !important;
-  }
-`;
-
 export const ProfileText = styled.h3`
   font-size: 18px;
   font-weight: 5px;
@@ -161,6 +152,15 @@ export const BasketIcon = styled(ShoppingBasketIcon)`
   @media screen and (max-width: 375px) {
     font-size: 20px !important;
   }
+`;
+
+export const HandlebarsIcon = styled(FaBars)`
+  font-size: 25px;
+  color: var(--lightTheme);
+`;
+export const CloseHandleBars = styled(FaTimes)`
+  font-size: 25px;
+  color: var(--lightTheme);
 `;
 
 export const LikeIcon = styled(FavoriteBorderIcon)`

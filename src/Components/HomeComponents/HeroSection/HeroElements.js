@@ -4,7 +4,7 @@ import { RiArrowLeftCircleFill } from "react-icons/ri";
 import { Button } from "@material-ui/core";
 
 export const Slide = styled.div`
-  height: 70vh;
+  height: 50vh;
   width: 100%;
   background-image: url("${({ content }) => content}");
   background-size: cover;
