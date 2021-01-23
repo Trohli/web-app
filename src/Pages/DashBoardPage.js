@@ -1,10 +1,12 @@
 import React from "react";
-import Dashboard from "../Components/DashboardComponents/Index";
+import DashboardHeader from "../Components/DashboardComponents/DashboardHeader/Index";
+import RecommendedBar from "../Components/DashboardComponents/RecommendedBar/Index";
 
 function DashBoardPage() {
   return (
     <>
-      <Dashboard />
+      <DashboardHeader />
+      <RecommendedBar />
     </>
   );
 }

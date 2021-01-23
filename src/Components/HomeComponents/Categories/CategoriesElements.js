@@ -48,6 +48,7 @@ export const StoreContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
   margin: 10px 0;
 `;
 export const StoreSlider = styled.div`
@@ -62,6 +63,7 @@ export const StoreTag = styled.div`
   flex-direction: column;
   height: 130px;
   width: 95%;
+  border-radius: 5px;
   margin-bottom: 10px;
   margin-left: 10px;
   padding: 10px;

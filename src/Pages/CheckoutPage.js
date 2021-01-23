@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import CheckoutCart from "../Components/CheckoutComponents/Cart/Index";
 import CheckoutPayment from "../Components/CheckoutComponents/Payment/Index";
-import CheckoutHeading from "../Components/CheckoutComponents/Header/Index";
+import CheckoutHeading from "../Components/CheckoutComponents/CheckoutHeader/Index";
 import CheckoutShipping from "../Components/CheckoutComponents/Shipping/Index";
 import CheckoutSummary from "../Components/CheckoutComponents/Summary/Index";
 
