@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
 import { IoMdCart } from "react-icons/io";
+import { FaHeart } from "react-icons/fa";
 
 export const TrendingSection = styled.section`
   display: flex;
@@ -121,6 +122,15 @@ export const TrendingNav = styled.div`
   color: var(--mainTheme);
 `;
 export const AddCartIcon = styled(IoMdCart)`
+  font-size: 20px !important;
+  color: var(--mainTheme);
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.4);
+  }
+`;
+export const LikeIcon = styled(FaHeart)`
   font-size: 20px !important;
   color: var(--mainTheme);
 

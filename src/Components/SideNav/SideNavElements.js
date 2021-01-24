@@ -9,6 +9,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { MdDashboard } from "react-icons/md";
 import { MdLocalConvenienceStore } from "react-icons/md";
 import { MdNotificationsActive } from "react-icons/md";
+import { GiWallet } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 export const SideNavComponents = styled.div`
@@ -69,7 +70,7 @@ export const SideOptionGuard = styled(Link)`
   outline: none;
   border: none;
   text-decoration: none;
-  flex: 0.121;
+  flex: 0.105;
   width: 100%;
   cursor: pointer;
   display: flex;
@@ -99,6 +100,10 @@ export const DashboardIcon = styled(MdDashboard)`
   margin-right: 15px;
 `;
 export const LikeIcon = styled(FaHeart)`
+  font-size: 20px;
+  margin-right: 15px;
+`;
+export const WalletIcon = styled(GiWallet)`
   font-size: 20px;
   margin-right: 15px;
 `;

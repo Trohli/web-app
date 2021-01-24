@@ -1,7 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
-import { useRouteMatch } from "react-router-dom";
 import {
   SideAvatar,
   SideNavComponents,
@@ -18,10 +16,10 @@ import {
   HomeIcon,
   MarketIcon,
   NotificationIcon,
+  WalletIcon,
 } from "./SideNavElements";
 
 function SideNav({ openNav }) {
-  const { path } = useRouteMatch();
   const [activeHome, setActiveHome] = useState(false);
   const [activeMarket, setActiveMarket] = useState(false);
   const [activeWishList, setActiveWishlist] = useState(false);
@@ -127,18 +125,26 @@ function SideNav({ openNav }) {
     },
 
     {
-      Icon: DashboardIcon,
-      Text: "Dashboard",
-      main: activeDashboard,
-      handleClick: SetDashboardActive,
-      link: "/dashboard",
-    },
-    {
       Icon: ShipIcon,
       Text: "Order",
       main: activeOrder,
       handleClick: SetOrderActive,
       link: "/checkout/cart",
+    },
+
+    {
+      Icon: WalletIcon,
+      Text: "wallet",
+      main: activeDashboard,
+      handleClick: SetDashboardActive,
+      link: "/dashboard",
+    },
+    {
+      Icon: DashboardIcon,
+      Text: "Dashboard",
+      main: activeDashboard,
+      handleClick: SetDashboardActive,
+      link: "/dashboard",
     },
     {
       Icon: NotificationIcon,

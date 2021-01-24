@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { GiShoppingCart } from "react-icons/gi";
 
 export const CartContainer = styled.div`
   display: flex;
@@ -64,6 +65,17 @@ export const FlexItemsless = styled.div`
   justify-content: ${({ start }) => (start ? "flex-start" : "center")};
   width: ${({ start }) => (start ? "15%" : "20%")};
 `;
+
+export const CartTextNormal = styled.h4`
+  font-size: 15px;
+  font-weight: bold;
+`;
+export const CartTextSmall = styled.p`
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--grayTheme);
+`;
+
 export const ItemImg = styled.img`
   height: 55px;
   width: 40px;
@@ -82,19 +94,35 @@ export const SizeSelect = styled.select`
 
 export const BillingContainer = styled.div`
   display: flex;
+  flex-direction: column;
   border-radius: 4px;
   width: 100%;
-  max-width: 350px;
+  max-width: 250px;
   height: 100%;
-  background: #fff;
+  background: var(--mainSeeThroughTheme);
+  border: 1px solid var(--mainTheme);
+  padding: 15px 10px;
+  color: var(--mainTheme);
 `;
-
-export const CartTextNormal = styled.h4`
-  font-size: 15px;
+export const ChargeHeading = styled.div`
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--mainTheme);
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+`;
+export const CartSumIcon = styled(GiShoppingCart)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-right: 15px;
+  color: var(--mainTheme);
+`;
+export const CartSumText = styled.h3`
+  font-size: 18px;
   font-weight: bold;
 `;
-export const CartTextSmall = styled.p`
-  font-size: 12px;
+export const CartChargeText = styled.h4`
+  font-size: 16px;
   font-weight: bold;
-  color: var(--grayTheme);
 `;

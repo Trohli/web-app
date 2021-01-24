@@ -7,11 +7,14 @@ import {
   FlexMore,
   Flexless,
   CartTextNormal,
+  CartSumIcon,
+  CartSumText,
+  ChargeHeading,
+  CartChargeText,
 } from "./CartElements";
 import CartItem from "./CartItem";
 
 function CheckoutCart() {
-  
   return (
     <>
       <CartContainer>
@@ -34,7 +37,16 @@ function CheckoutCart() {
           <CartItem />
           <CartItem />
         </CartItemsContainer>
-        <BillingContainer>this is the billing container</BillingContainer>
+        <BillingContainer>
+          <ChargeHeading>
+            <CartSumIcon />
+            <CartSumText>Cart Charges</CartSumText>
+          </ChargeHeading>
+          <CartChargeText>
+            You have 4 different items in your cart.
+          </CartChargeText>
+          <CartChargeText>Everyting here cost $3800.</CartChargeText>
+        </BillingContainer>
       </CartContainer>
     </>
   );

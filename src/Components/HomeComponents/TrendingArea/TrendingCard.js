@@ -6,6 +6,7 @@ import {
   CardBtn,
   CardRow,
   AddCartIcon,
+  LikeIcon,
 } from "./TrendingElements";
 
 function TrendingCard({ name, image, price }) {
@@ -17,6 +18,7 @@ function TrendingCard({ name, image, price }) {
         <CardH3> {price} </CardH3>
         <CardRow>
           <CardBtn>Buy</CardBtn>
+          <LikeIcon />
           <AddCartIcon />
         </CardRow>
       </Card>
