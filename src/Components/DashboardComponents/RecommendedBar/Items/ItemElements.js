@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-import { IoMdCart } from "react-icons/io";
+import { MdAddShoppingCart } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 
 export const RecommendedItemContent = styled.div`
@@ -45,9 +45,10 @@ export const ItemIconContainer = styled.div`
   width: 100%;
   justify-content: space-between;
 `;
-export const AddCartIcon = styled(IoMdCart)`
+export const AddCartIcon = styled(MdAddShoppingCart)`
   font-size: 20px !important;
   color: var(--mainTheme);
+  cursor: pointer;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -57,6 +58,7 @@ export const AddCartIcon = styled(IoMdCart)`
 export const LikeIcon = styled(FaHeart)`
   font-size: 20px !important;
   color: var(--mainTheme);
+  cursor: pointer;
 
   &:hover {
     transition: all 0.2s ease-in-out;

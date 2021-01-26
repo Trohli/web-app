@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Avatar } from "@material-ui/core";
 import { FaHome } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
-import { FaShip } from "react-icons/fa";
+import { GiShoppingCart } from "react-icons/gi";
 import { IoMdSettings } from "react-icons/io";
 import { GiExitDoor } from "react-icons/gi";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -107,7 +107,7 @@ export const WalletIcon = styled(GiWallet)`
   font-size: 20px;
   margin-right: 15px;
 `;
-export const ShipIcon = styled(FaShip)`
+export const ShipIcon = styled(GiShoppingCart)`
   font-size: 20px;
   margin-right: 15px;
 `;

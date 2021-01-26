@@ -11,10 +11,6 @@ import {
 function CheckoutHeading() {
   const CheckoutLink = [
     {
-      name: "Cart",
-      id: "cart",
-    },
-    {
       name: "Shipping",
       id: "shipping",
     },
@@ -36,6 +32,9 @@ function CheckoutHeading() {
         </CheckoutHeadingContent>
       </CheckoutHeadingContainer>
       <CheckoutLinksContainer>
+        <PageLinks to="/checkout">
+          <CheckoutLinksContent>Cart</CheckoutLinksContent>
+        </PageLinks>
         {CheckoutLink.map(({ name, id }) => (
           <PageLinks to={`/checkout/${id}`} key={id}>
             <CheckoutLinksContent>{name}</CheckoutLinksContent>

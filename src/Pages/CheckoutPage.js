@@ -11,7 +11,7 @@ function CheckoutPage() {
     <>
       <CheckoutHeading />
       <Switch>
-        <Route path="/checkout/cart" component={CheckoutCart} />
+        <Route path="/checkout" exact component={CheckoutCart} />
         <Route path="/checkout/shipping" component={CheckoutShipping} />
         <Route path="/checkout/payment" component={CheckoutPayment} />
         <Route path="/checkout/summary" component={CheckoutSummary} />

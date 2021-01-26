@@ -16,9 +16,13 @@ import {
   SummaryGrid,
   SummaryFlex,
   SpaceFont,
-  SummaryBtn,
-  SummaryFormInput,
-  SummaryForms,
+  SpeedSelectContainer,
+  SpeedSelect,
+  BackToShopContainer,
+  BackToShopFlex,
+  CartChargeText,
+  ContinueCheckoutIcon,
+  BackToShopIcon,
 } from "./ShippingElements";
 
 function CheckoutShipping() {
@@ -93,15 +97,24 @@ function CheckoutShipping() {
         <SummaryContainer>
           <SummaryHeading>Summary</SummaryHeading>
           <SummaryText>
-            The total cost consist of the tax, insurance and the shipping charge
+            The total cost consist of the tax, insurance and the shipping
+            charge.
           </SummaryText>
+          <SpeedSelectContainer>
+            <SmallFont>How fast should it go?</SmallFont>
+            <SpeedSelect>
+              <option>Normal</option>
+              <option>fast</option>
+              <option>very fast</option>
+            </SpeedSelect>
+          </SpeedSelectContainer>
           <SummaryGrid>
             <SummaryFlex>
               <SmallFont>Shipping</SmallFont>
               <SpaceFont>$23.99</SpaceFont>
             </SummaryFlex>
             <SummaryFlex>
-              <SmallFont>Tax</SmallFont>
+              <SmallFont>Speed</SmallFont>
               <SpaceFont>$5.44</SpaceFont>
             </SummaryFlex>
             <SummaryFlex>
@@ -110,14 +123,20 @@ function CheckoutShipping() {
             </SummaryFlex>
           </SummaryGrid>
           <SummaryFlex last>
-            <SummaryForms>
-              <SummaryFormInput placeholder="Discount code?" />
-              <SummaryBtn>Apply</SummaryBtn>
-            </SummaryForms>
+            <SummaryHeading>Shipping Rate:</SummaryHeading>
             <SummaryHeading>$12.00</SummaryHeading>
           </SummaryFlex>
         </SummaryContainer>
       </ShipContainer>
+      <BackToShopContainer>
+        <BackToShopFlex to="/checkout">
+          <BackToShopIcon /> <CartChargeText>Back to Cart</CartChargeText>
+        </BackToShopFlex>
+        <BackToShopFlex to="/checkout/payment">
+          <CartChargeText>Proceed to Payments</CartChargeText>
+          <ContinueCheckoutIcon />
+        </BackToShopFlex>
+      </BackToShopContainer>
     </>
   );
 }

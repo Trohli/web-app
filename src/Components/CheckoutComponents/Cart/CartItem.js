@@ -8,6 +8,10 @@ import {
   ItemImg,
   SizeSelect,
   ItemTextContainer,
+  CartCountMeter,
+  IncreaseCartIcon,
+  ReduceCartIcon,
+  CountText,
 } from "./CartElements";
 
 function CartItem() {
@@ -30,7 +34,11 @@ function CartItem() {
           </SizeSelect>
         </FlexItemsless>
         <FlexItemsless>
-          <CartTextNormal>Quantity</CartTextNormal>
+          <CartCountMeter>
+            <ReduceCartIcon />
+            <CountText>5</CountText>
+            <IncreaseCartIcon />
+          </CartCountMeter>
         </FlexItemsless>
         <FlexItemsless start>
           <CartTextNormal>$340</CartTextNormal>

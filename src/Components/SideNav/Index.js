@@ -126,10 +126,10 @@ function SideNav({ openNav }) {
 
     {
       Icon: ShipIcon,
-      Text: "Order",
+      Text: "Cart",
       main: activeOrder,
       handleClick: SetOrderActive,
-      link: "/checkout/cart",
+      link: "/checkout",
     },
 
     {

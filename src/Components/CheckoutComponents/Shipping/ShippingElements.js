@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { Button } from "@material-ui/core";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 export const ShipContainer = styled.div`
   display: flex;
@@ -85,6 +87,7 @@ export const SummaryContainer = styled.div`
   max-width: 350px;
   height: max-content;
   padding: 20px 20px;
+  border: 1px solid var(--mainTheme);
 `;
 export const SummaryGrid = styled.div`
   display: grid;
@@ -120,46 +123,61 @@ export const SpaceFont = styled.h5`
   display: flex;
   align-items: flex-start;
 `;
-export const SummaryForms = styled.form`
+
+export const SpeedSelectContainer = styled.div`
   display: flex;
   align-items: center;
-  border-radius: 8px !important;
-  padding-left: 5px;
-  box-sizing:border-box
   justify-content: space-between;
-  max-width: 180px;
-  width: 100%;
-  border: 1px solid var(--grayTheme);
-  background: #fff;
+  margin: 10px 0;
 `;
-export const SummaryFormInput = styled.input`
-  background: transparent;
-  border: none;
-  max-width: 130px;
-  width: 100%;
+
+export const SpeedSelect = styled.select`
+  flex: 0.1;
   padding: 0 10px;
   box-sizing: border-box;
-  font-size: 12px;
-  height: 20px;
+  border: none;
+  color: var(--mainTheme);
 
   &:focus {
     outline: none;
   }
 `;
-export const SummaryBtn = styled(Button)`
-  border-radius: 8px !important;
-  background: ${({ main }) =>
-    main ? "var(--lightTheme) " : " var(--mainTheme) "} !important;
-  color: ${({ main }) =>
-    main ? " var(--mainTheme)  " : "var(--lightTheme)  "} !important;
-  font-size: 10px !important;
-  font-weight: bolder;
 
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    transform: scale(1.02);
-    background: ${({ main }) =>
-      main ? " var(--mainTheme)" : "#fff "} !important;
-    color: ${({ main }) => (main ? "  #fff " : " var(--mainTheme)")} !important;
-  }
+export const BackToShopIcon = styled(IoIosArrowRoundBack)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-right: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+`;
+export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+`;
+export const BackToShopContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 95%;
+  color: var(--mainTheme);
+  margin-bottom: 10px;
+`;
+export const BackToShopFlex = styled(Link)`
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+`;
+export const CartChargeText = styled.h4`
+  font-size: ${({ big }) => (big ? "20px" : "16px")};
+  font-weight: bold;
 `;

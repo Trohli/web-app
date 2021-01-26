@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
-import { IoMdCart } from "react-icons/io";
+import { MdAddShoppingCart } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 
 export const TrendingSection = styled.section`
@@ -88,7 +88,7 @@ export const CardBtn = styled(Button)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     background: ${({ main }) =>
       main ? " var(--mainTheme)" : "var(--lightTheme)  "} !important;
     color: ${({ main }) =>
@@ -121,21 +121,23 @@ export const TrendingNav = styled.div`
   background: var(--lightTheme);
   color: var(--mainTheme);
 `;
-export const AddCartIcon = styled(IoMdCart)`
+export const AddCartIcon = styled(MdAddShoppingCart)`
   font-size: 20px !important;
   color: var(--mainTheme);
+  cursor: pointer;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    transform: scale(1.4);
+    transform: scale(1.2);
   }
 `;
 export const LikeIcon = styled(FaHeart)`
   font-size: 20px !important;
   color: var(--mainTheme);
+  cursor: pointer;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    transform: scale(1.4);
+    transform: scale(1.2);
   }
 `;

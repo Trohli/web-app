@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { GiShoppingCart } from "react-icons/gi";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { GrFormAdd } from "react-icons/gr";
+import { IoIosRemove } from "react-icons/io";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 export const CartContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  padding: 40px 20px;
+  padding: 40px 20px 20px 20px;
   box-sizing: border-box;
   max-width: 1300px;
   margin: 0 auto;
@@ -34,6 +39,16 @@ export const CartItemsContent = styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--lightGray);
+`;
+export const CartCountMeter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--mainTheme);
+  border-radius: 99px;
+  padding: 2px 10px;
+  box-sizing: border-box;
+  width: 60%;
 `;
 export const ItemTextContainer = styled.div`
   display: flex;
@@ -65,7 +80,22 @@ export const FlexItemsless = styled.div`
   justify-content: ${({ start }) => (start ? "flex-start" : "center")};
   width: ${({ start }) => (start ? "15%" : "20%")};
 `;
-
+export const IncreaseCartIcon = styled(GrFormAdd)`
+  font-size: 20px;
+  color: var(--mainTheme);
+  padding: 5px;
+  cursor: pointer;
+`;
+export const ReduceCartIcon = styled(IoIosRemove)`
+  font-size: 20px;
+  color: var(--mainTheme);
+  padding: 5px;
+  cursor: pointer;
+`;
+export const CountText = styled.h5`
+  font-size: 15px;
+  color: var(--mainTheme);
+`;
 export const CartTextNormal = styled.h4`
   font-size: 15px;
   font-weight: bold;
@@ -86,6 +116,7 @@ export const SizeSelect = styled.select`
   border-radius: 99px;
   padding: 5px 10px;
   box-sizing: border-box;
+  width: 60%;
 
   &:focus {
     outline: none;
@@ -118,11 +149,60 @@ export const CartSumIcon = styled(GiShoppingCart)`
   margin-right: 15px;
   color: var(--mainTheme);
 `;
+export const BackToShopIcon = styled(IoIosArrowRoundBack)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-right: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+`;
+export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+`;
 export const CartSumText = styled.h3`
   font-size: 18px;
   font-weight: bold;
 `;
 export const CartChargeText = styled.h4`
-  font-size: 16px;
+  font-size: ${({ big }) => (big ? "20px" : "16px")};
   font-weight: bold;
+`;
+export const CartChargeFlex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+`;
+export const CartChargeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--mainTheme);
+`;
+export const BackToShopContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 95%;
+  color: var(--mainTheme);
+  margin-bottom: 10px;
+`;
+export const BackToShopFlex = styled(Link)`
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 `;

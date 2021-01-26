@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IoMdCart } from "react-icons/io";
+import { MdAddShoppingCart } from "react-icons/md";
 
 export const ClosebySection = styled.section`
   display: flex;
@@ -99,7 +99,7 @@ export const Hrl = styled.hr`
   width: 100%;
 `;
 
-export const AddCartIcon = styled(IoMdCart)`
+export const AddCartIcon = styled(MdAddShoppingCart)`
   font-size: 20px !important;
   color: var(--mainTheme);
   position: absolute;

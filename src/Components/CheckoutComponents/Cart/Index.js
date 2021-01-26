@@ -11,6 +11,12 @@ import {
   CartSumText,
   ChargeHeading,
   CartChargeText,
+  CartChargeFlex,
+  CartChargeContainer,
+  BackToShopIcon,
+  ContinueCheckoutIcon,
+  BackToShopFlex,
+  BackToShopContainer,
 } from "./CartElements";
 import CartItem from "./CartItem";
 
@@ -40,14 +46,29 @@ function CheckoutCart() {
         <BillingContainer>
           <ChargeHeading>
             <CartSumIcon />
-            <CartSumText>Cart Charges</CartSumText>
+            <CartSumText>Your cart</CartSumText>
           </ChargeHeading>
-          <CartChargeText>
-            You have 4 different items in your cart.
-          </CartChargeText>
-          <CartChargeText>Everyting here cost $3800.</CartChargeText>
+          <CartChargeContainer>
+            <CartChargeFlex>
+              <CartChargeText>Subtotal:</CartChargeText>
+              <CartChargeText>2 items</CartChargeText>
+            </CartChargeFlex>
+            <CartChargeFlex>
+              <CartChargeText>Total cost:</CartChargeText>
+              <CartChargeText big>$1020</CartChargeText>
+            </CartChargeFlex>
+          </CartChargeContainer>
         </BillingContainer>
       </CartContainer>
+      <BackToShopContainer>
+        <BackToShopFlex to="/">
+          <BackToShopIcon /> <CartChargeText>Continue Shopping</CartChargeText>
+        </BackToShopFlex>
+        <BackToShopFlex to="/checkout/shipping">
+          <CartChargeText>Proceed to Shipping</CartChargeText>
+          <ContinueCheckoutIcon />
+        </BackToShopFlex>
+      </BackToShopContainer>
     </>
   );
 }
