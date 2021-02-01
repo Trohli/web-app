@@ -8,6 +8,7 @@ import {
   SidebarOption,
   SidebarH3,
   StoreContainer,
+  StoreTop,
   StoreSlider,
   StoresH3,
   FashionIcon,
@@ -19,6 +20,9 @@ import {
   GadgetsIcon,
   FitnessIcon,
   ExpandIcon,
+  ToStoresContainer,
+  ToStoresIcon,
+  ToStoresText,
 } from "./CategoriesElements";
 import SideCategory from "./SideCategory";
 import StoreCategories from "./StoreCategories";
@@ -71,6 +75,16 @@ function Categories() {
       tagB: "clothes",
       tagC: "rings",
       tagD: "fashion",
+      id: 1,
+    },
+    {
+      store: "Royals",
+      storeImg: "./images/sk.png",
+      tagA: "shoes",
+      tagB: "clothes",
+      tagC: "rings",
+      tagD: "fashion",
+      id: 2,
     },
     {
       store: "st.Kicks",
@@ -79,6 +93,7 @@ function Categories() {
       tagB: "clothes",
       tagC: "rings",
       tagD: "fashion",
+      id: 3,
     },
     {
       store: "st.Kicks",
@@ -87,6 +102,7 @@ function Categories() {
       tagB: "clothes",
       tagC: "rings",
       tagD: "fashion",
+      id: 4,
     },
     {
       store: "st.Kicks",
@@ -95,6 +111,7 @@ function Categories() {
       tagB: "clothes",
       tagC: "rings",
       tagD: "fashion",
+      id: 5,
     },
     {
       store: "st.Kicks",
@@ -103,14 +120,7 @@ function Categories() {
       tagB: "clothes",
       tagC: "rings",
       tagD: "fashion",
-    },
-    {
-      store: "st.Kicks",
-      storeImg: "./images/sk.png",
-      tagA: "shoes",
-      tagB: "clothes",
-      tagC: "rings",
-      tagD: "fashion",
+      id: 6,
     },
   ];
 
@@ -122,8 +132,9 @@ function Categories() {
   };
 
   const NearbystoreItems = storeCategoryData.map(
-    ({ store, storeImg, tagA, tagB, tagC, tagD }) => (
+    ({ store, storeImg, tagA, tagB, tagC, tagD, id }, i) => (
       <StoreCategories
+        key={id + i}
         store={store}
         storeImg={storeImg}
         tagA={tagA}
@@ -134,9 +145,10 @@ function Categories() {
     )
   );
   const NewstoreItems = storeCategoryData.map(
-    ({ store, storeImg, tagA, tagB, tagC, tagD }) => (
+    ({ store, storeImg, tagA, tagB, tagC, tagD, id }, i) => (
       <StoreCategories
         main
+        key={id + i}
         store={store}
         storeImg={storeImg}
         tagA={tagA}
@@ -154,13 +166,19 @@ function Categories() {
           <SidebarOption active>
             <SidebarH3>All Categories</SidebarH3>
           </SidebarOption>
-          {sidebarData.map(({ icon, text }) => (
-            <SideCategory Icon={icon} text={text} />
+          {sidebarData.map(({ icon, text }, i) => (
+            <SideCategory key={i} Icon={icon} text={text} />
           ))}
         </SideCategoriesContainer>
         <StoreCategoriesContainer>
           <StoreContainer main>
-            <StoresH3>Nearby Stores</StoresH3>
+            <StoreTop>
+              <StoresH3>Nearby Stores</StoresH3>
+              <ToStoresContainer to="/stores">
+                <ToStoresText>To Stores</ToStoresText>
+                <ToStoresIcon />
+              </ToStoresContainer>
+            </StoreTop>
             <StoreSlider>
               <AliceCarousel
                 autoPlay
@@ -177,7 +195,13 @@ function Categories() {
             </StoreSlider>
           </StoreContainer>
           <StoreContainer>
-            <StoresH3 main>New Stores</StoresH3>
+            <StoreTop>
+              <StoresH3 main>New Stores</StoresH3>
+              <ToStoresContainer main to="/stores">
+                <ToStoresText>To Stores</ToStoresText>
+                <ToStoresIcon />
+              </ToStoresContainer>
+            </StoreTop>
             <StoreSlider>
               <AliceCarousel
                 autoPlay

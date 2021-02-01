@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { useState } from "react";
+import { useStateValue } from "../../StateProvider";
 import {
   SideAvatar,
   SideNavComponents,
@@ -19,151 +20,84 @@ import {
   WalletIcon,
 } from "./SideNavElements";
 
-function SideNav({ openNav }) {
-  const [activeHome, setActiveHome] = useState(false);
-  const [activeMarket, setActiveMarket] = useState(false);
-  const [activeWishList, setActiveWishlist] = useState(false);
-  const [activeDashboard, setActiveDashboard] = useState(false);
-  const [activeNotification, setActiveNotification] = useState(false);
-  const [activeOrder, setActiveOrder] = useState(false);
-  const [activeSettings, setActiveSettings] = useState(false);
+const initialState = {
+  activeHome: false,
+  activeMarket: false,
+  activeCart: false,
+  activeWishList: false,
+  activeWallet: false,
+  activeDashboard: false,
+  activeNotification: false,
+  activeSettings: false,
+};
 
-  const SetHomeActive = () => {
-    setActiveHome(true);
-    setActiveMarket(false);
-    setActiveWishlist(false);
-    setActiveNotification(false);
-    setActiveDashboard(false);
-    setActiveOrder(false);
-    setActiveSettings(false);
-  };
-  const SetMarketActive = () => {
-    setActiveHome(false);
-    setActiveMarket(true);
-    setActiveWishlist(false);
-    setActiveNotification(false);
-    setActiveDashboard(false);
-    setActiveOrder(false);
-    setActiveSettings(false);
-  };
-  const SetDashboardActive = () => {
-    setActiveHome(false);
-    setActiveMarket(false);
-    setActiveWishlist(false);
-    setActiveNotification(false);
-    setActiveDashboard(true);
-    setActiveOrder(false);
-    setActiveSettings(false);
-  };
-  const SetNotificationActive = () => {
-    setActiveHome(false);
-    setActiveMarket(false);
-    setActiveWishlist(false);
-    setActiveNotification(true);
-    setActiveDashboard(false);
-    setActiveOrder(false);
-    setActiveSettings(false);
-  };
-  const SetWishlistActive = () => {
-    setActiveHome(false);
-    setActiveMarket(false);
-    setActiveWishlist(true);
-    setActiveNotification(false);
-    setActiveDashboard(false);
-    setActiveOrder(false);
-    setActiveSettings(false);
-  };
-  const SetOrderActive = () => {
-    setActiveHome(false);
-    setActiveMarket(false);
-    setActiveWishlist(false);
-    setActiveNotification(false);
-    setActiveDashboard(false);
-    setActiveOrder(true);
-    setActiveSettings(false);
-  };
-  const SetSettingActive = () => {
-    setActiveHome(false);
-    setActiveMarket(false);
-    setActiveWishlist(false);
-    setActiveNotification(false);
-    setActiveDashboard(false);
-    setActiveOrder(false);
-    setActiveSettings(true);
-  };
-  const SetLogActive = () => {
-    setActiveHome(false);
-    setActiveMarket(false);
-    setActiveWishlist(false);
-    setActiveNotification(false);
-    setActiveDashboard(false);
-    setActiveOrder(false);
-    setActiveSettings(false);
-  };
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "ACTIVATE_HOME":
+      return {
+        ...state,
+        activeHome: true,
+      };
+  }
+};
+function SideNav() {
+  const [{ openNav }, dispatch] = useStateValue();
+  const [state, disput] = useReducer(reducer, initialState);
 
   const SideNavContent = [
     {
       Icon: HomeIcon,
       Text: "Home",
-      main: activeHome,
-      handleClick: SetHomeActive,
+      main: state.activeHome,
       link: "/",
     },
     {
       Icon: MarketIcon,
-      Text: "Market Square",
-      main: activeMarket,
-      handleClick: SetMarketActive,
+      Text: "General Market",
+      main: state.activeMarket,
       link: "/",
     },
     {
       Icon: LikeIcon,
       Text: "Wishlist",
-      main: activeWishList,
-      handleClick: SetWishlistActive,
+      main: state.activeWishList,
       link: "/",
     },
 
     {
       Icon: ShipIcon,
       Text: "Cart",
-      main: activeOrder,
-      handleClick: SetOrderActive,
+      main: state.activeCart,
       link: "/checkout",
     },
 
     {
       Icon: WalletIcon,
       Text: "wallet",
-      main: activeDashboard,
-      handleClick: SetDashboardActive,
+      main: state.activeDashboard,
       link: "/dashboard",
     },
     {
       Icon: DashboardIcon,
       Text: "Dashboard",
-      main: activeDashboard,
-      handleClick: SetDashboardActive,
+      main: state.activeDashboard,
       link: "/dashboard",
     },
     {
       Icon: NotificationIcon,
       Text: "Notification",
-      main: activeNotification,
-      handleClick: SetNotificationActive,
+      main: state.activeNotification,
       link: "/",
     },
     {
       Icon: SettingsIcon,
       Text: "Settings",
-      main: activeSettings,
-      handleClick: SetSettingActive,
+      main: state.activeSettings,
       link: "/",
     },
     {
       Icon: LogoutIcon,
       Text: "Logout",
-      handleClick: SetLogActive,
       link: "/",
     },
   ];
@@ -174,12 +108,7 @@ function SideNav({ openNav }) {
         <NavHeadText>Hello, Skyboy</NavHeadText>
         <SideOptionsContainer>
           {SideNavContent.map(({ Icon, link, Text, main, handleClick }) => (
-            <SideOptionGuard
-              main={main}
-              key={Text}
-              onClick={handleClick}
-              to={link}
-            >
+            <SideOptionGuard main={main} key={Text} to={link}>
               <Icon />
               <SideText>{Text}</SideText>
               <ArrowRightIcon />

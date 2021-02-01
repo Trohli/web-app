@@ -8,8 +8,26 @@ import {
   AddCartIcon,
   LikeIcon,
 } from "./TrendingElements";
+import { IconButton } from "@material-ui/core";
+import { useStateValue } from "../../../StateProvider";
 
-function TrendingCard({ name, image, price }) {
+function TrendingCard({ name, image, price, id, description }) {
+  const [{ basket }, dispatch] = useStateValue();
+
+  const addToBasket = () => {
+    // dispatch the item into the data layer
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id: id,
+        name: name,
+        image: image,
+        price: price,
+        description: description,
+      },
+    });
+  };
+
   return (
     <>
       <Card>
@@ -18,8 +36,13 @@ function TrendingCard({ name, image, price }) {
         <CardH3> {price} </CardH3>
         <CardRow>
           <CardBtn>Buy</CardBtn>
-          <LikeIcon />
-          <AddCartIcon />
+          <IconButton>
+            <LikeIcon />
+          </IconButton>
+
+          <IconButton onClick={addToBasket}>
+            <AddCartIcon />
+          </IconButton>
         </CardRow>
       </Card>
     </>

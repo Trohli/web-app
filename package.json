@@ -11,6 +11,7 @@
     "react": "^16.14.0",
     "react-alice-carousel": "^2.1.0",
     "react-credit-cards": "^0.8.3",
+    "react-currency-format": "^1.0.0",
     "react-currency-formatter": "^1.1.0",
     "react-dom": "^16.14.0",
     "react-icons": "^3.11.0",

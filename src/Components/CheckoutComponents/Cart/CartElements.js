@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { GiShoppingCart } from "react-icons/gi";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import { GrFormAdd } from "react-icons/gr";
-import { IoIosRemove } from "react-icons/io";
+import { MdDeleteForever } from "react-icons/md";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 
@@ -40,16 +39,6 @@ export const CartItemsContent = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid var(--lightGray);
 `;
-export const CartCountMeter = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 2px solid var(--mainTheme);
-  border-radius: 99px;
-  padding: 2px 10px;
-  box-sizing: border-box;
-  width: 60%;
-`;
 export const ItemTextContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,24 +66,14 @@ export const Flexless = styled.div`
 export const FlexItemsless = styled.div`
   display: flex;
   align-items: center;
-  justify-content: ${({ start }) => (start ? "flex-start" : "center")};
-  width: ${({ start }) => (start ? "15%" : "20%")};
+  justify-content: space-between;
+  width: 20%;
 `;
-export const IncreaseCartIcon = styled(GrFormAdd)`
+export const RemoveCartIcon = styled(MdDeleteForever)`
   font-size: 20px;
   color: var(--mainTheme);
   padding: 5px;
   cursor: pointer;
-`;
-export const ReduceCartIcon = styled(IoIosRemove)`
-  font-size: 20px;
-  color: var(--mainTheme);
-  padding: 5px;
-  cursor: pointer;
-`;
-export const CountText = styled.h5`
-  font-size: 15px;
-  color: var(--mainTheme);
 `;
 export const CartTextNormal = styled.h4`
   font-size: 15px;
@@ -110,17 +89,6 @@ export const ItemImg = styled.img`
   height: 55px;
   width: 40px;
   margin-right: 10px;
-`;
-export const SizeSelect = styled.select`
-  border: 2px solid var(--mainTheme);
-  border-radius: 99px;
-  padding: 5px 10px;
-  box-sizing: border-box;
-  width: 60%;
-
-  &:focus {
-    outline: none;
-  }
 `;
 
 export const BillingContainer = styled.div`

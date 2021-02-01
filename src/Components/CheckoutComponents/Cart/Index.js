@@ -1,11 +1,12 @@
 import React from "react";
+import { getBasketTotal } from "../../../reducer";
+import { useStateValue } from "../../../StateProvider";
 import {
   BillingContainer,
   CartContainer,
   CartItemsContainer,
   CartItemsContent,
   FlexMore,
-  Flexless,
   CartTextNormal,
   CartSumIcon,
   CartSumText,
@@ -21,27 +22,27 @@ import {
 import CartItem from "./CartItem";
 
 function CheckoutCart() {
-  return (
+  const [{ basket }, dispatch] = useStateValue();
+
+  const CartInlineComponents = () => (
     <>
       <CartContainer>
         <CartItemsContainer>
           <CartItemsContent>
             <FlexMore>
-              <CartTextNormal>Product</CartTextNormal>
+              <CartTextNormal>Cart Items</CartTextNormal>
             </FlexMore>
-            <Flexless>
-              <CartTextNormal>Size</CartTextNormal>
-            </Flexless>
-            <Flexless>
-              <CartTextNormal>Quantity</CartTextNormal>
-            </Flexless>
-            <Flexless start>
-              <CartTextNormal>Total Price</CartTextNormal>
-            </Flexless>
           </CartItemsContent>
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {basket.map(({ id, name, image, price, description }, i) => (
+            <CartItem
+              key={id + i}
+              id={id}
+              name={name}
+              image={image}
+              price={price}
+              description={description}
+            />
+          ))}
         </CartItemsContainer>
         <BillingContainer>
           <ChargeHeading>
@@ -51,11 +52,11 @@ function CheckoutCart() {
           <CartChargeContainer>
             <CartChargeFlex>
               <CartChargeText>Subtotal:</CartChargeText>
-              <CartChargeText>2 items</CartChargeText>
+              <CartChargeText>{basket.length} items</CartChargeText>
             </CartChargeFlex>
             <CartChargeFlex>
               <CartChargeText>Total cost:</CartChargeText>
-              <CartChargeText big>$1020</CartChargeText>
+              <CartChargeText big>${getBasketTotal(basket)} </CartChargeText>
             </CartChargeFlex>
           </CartChargeContainer>
         </BillingContainer>
@@ -69,6 +70,15 @@ function CheckoutCart() {
           <ContinueCheckoutIcon />
         </BackToShopFlex>
       </BackToShopContainer>
+    </>
+  );
+  return (
+    <>
+      {basket?.length === 0 ? (
+        <h2>your cart is empty</h2>
+      ) : (
+        <CartInlineComponents />
+      )}
     </>
   );
 }

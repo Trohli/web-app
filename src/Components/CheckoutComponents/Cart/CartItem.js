@@ -6,42 +6,36 @@ import {
   FlexItemsless,
   FlexItemsMore,
   ItemImg,
-  SizeSelect,
   ItemTextContainer,
-  CartCountMeter,
-  IncreaseCartIcon,
-  ReduceCartIcon,
-  CountText,
+  RemoveCartIcon,
 } from "./CartElements";
+import { IconButton } from "@material-ui/core";
+import { useStateValue } from "../../../StateProvider";
 
-function CartItem() {
+function CartItem({ image, name, description, price, id }) {
+  const [{ basket }, dispatch] = useStateValue();
+  const removeFromBasket = () => {
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: id,
+    });
+  };
   return (
     <>
       <CartItemsContent>
         <FlexItemsMore>
-          <ItemImg src="../images/phone.png" />
+          <ItemImg src={image} />
           <ItemTextContainer>
-            <CartTextNormal>Product</CartTextNormal>
-            <CartTextSmall>Blue</CartTextSmall>
+            <CartTextNormal>{name} </CartTextNormal>
+            <CartTextSmall>{description} </CartTextSmall>
           </ItemTextContainer>
         </FlexItemsMore>
-        <FlexItemsless>
-          <SizeSelect>
-            <option value="1">32gb</option>
-            <option value="2">24gb</option>
-            <option value="3">18gb</option>
-            <option value="4">12gb</option>
-          </SizeSelect>
-        </FlexItemsless>
-        <FlexItemsless>
-          <CartCountMeter>
-            <ReduceCartIcon />
-            <CountText>5</CountText>
-            <IncreaseCartIcon />
-          </CartCountMeter>
-        </FlexItemsless>
+
         <FlexItemsless start>
-          <CartTextNormal>$340</CartTextNormal>
+          <CartTextNormal>{price} </CartTextNormal>
+          <IconButton onClick={removeFromBasket}>
+            <RemoveCartIcon />
+          </IconButton>
         </FlexItemsless>
       </CartItemsContent>
     </>

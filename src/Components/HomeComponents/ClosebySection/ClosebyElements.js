@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MdAddShoppingCart } from "react-icons/md";
+import { IconButton } from "@material-ui/core";
 
 export const ClosebySection = styled.section`
   display: flex;
@@ -99,16 +100,19 @@ export const Hrl = styled.hr`
   width: 100%;
 `;
 
-export const AddCartIcon = styled(MdAddShoppingCart)`
-  font-size: 20px !important;
-  color: var(--mainTheme);
-  position: absolute;
-  top: 10px;
-  right: 10px;
+export const AddCartIconContainer = styled(IconButton)`
+  position: absolute !important;
+  top: 0px !important;
+  right: 0px !important;
   cursor: pointer;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.02);
   }
+`;
+export const AddCartIcon = styled(MdAddShoppingCart)`
+  font-size: 18px !important;
+  color: var(--mainTheme);
+  font-weight: bolder;
 `;

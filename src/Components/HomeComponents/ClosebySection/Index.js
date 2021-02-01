@@ -18,42 +18,48 @@ function ClosebyItems() {
         "https://images.unsplash.com/photo-1576074209407-04b529a8ca81?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGklMjBwaG9uZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
       text: "GaBox",
       distance: "1m",
-      price: "340",
+      price: 200,
+      id: 1,
     },
     {
       image:
         "https://images.unsplash.com/photo-1576074209407-04b529a8ca81?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGklMjBwaG9uZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
       text: "jam Box",
       distance: "3m",
-      price: "20",
+      price: 523,
+      id: 2,
     },
     {
       image:
         "https://images.unsplash.com/photo-1576074209407-04b529a8ca81?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGklMjBwaG9uZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
       text: "plam Box",
       distance: "5m",
-      price: "3620",
+      price: 322,
+      id: 3,
     },
     {
       image:
         "https://images.unsplash.com/photo-1576074209407-04b529a8ca81?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGklMjBwaG9uZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
       text: "plates Box",
       distance: "9m",
-      price: "3520",
+      price: 120,
+      id: 4,
     },
     {
       image:
         "https://images.unsplash.com/photo-1576074209407-04b529a8ca81?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGklMjBwaG9uZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
       text: "Game Box",
       distance: "0m",
-      price: "320",
+      price: 250,
+      id: 5,
     },
     {
       image:
         "https://images.unsplash.com/photo-1576074209407-04b529a8ca81?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGklMjBwaG9uZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
       text: "Game Box",
       distance: "4m",
-      price: "420",
+      price: 332,
+      id: 6,
     },
   ];
 
@@ -64,6 +70,7 @@ function ClosebyItems() {
       text={card.text}
       distance={card.distance}
       price={card.price}
+      id={card.id + i}
     />
   ));
 
@@ -80,174 +87,24 @@ function ClosebyItems() {
           <Hrl />
         </ClosebyHeading>
         <CardSection>
-          <CardBar>
-            <AliceCarousel
-              autoPlay
-              infinite
-              items={items}
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8000"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8100"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8200"
-              controlsStrategy="responsive"
-              disableButtonsControls="true"
-              responsive={responsive}
-              disableDotsControls="true"
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8300"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8400"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8500"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              autoPlay
-              infinite
-              items={items}
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8000"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8100"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8200"
-              controlsStrategy="responsive"
-              disableButtonsControls="true"
-              responsive={responsive}
-              disableDotsControls="true"
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8300"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8400"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
-          <CardBar>
-            <AliceCarousel
-              items={items}
-              autoPlay
-              infinite
-              mouseTracking
-              animationType="fadeout"
-              autoPlayInterval="8500"
-              controlsStrategy="responsive"
-              disableDotsControls="true"
-              disableButtonsControls="true"
-              responsive={responsive}
-            />
-          </CardBar>
+          {Array(12)
+            .fill()
+            .map((_, i) => (
+              <CardBar key={i}>
+                <AliceCarousel
+                  autoPlay
+                  infinite
+                  items={items}
+                  mouseTracking
+                  animationType="fadeout"
+                  autoPlayInterval="8000"
+                  controlsStrategy="responsive"
+                  disableDotsControls="true"
+                  disableButtonsControls="true"
+                  responsive={responsive}
+                />
+              </CardBar>
+            ))}
         </CardSection>
       </ClosebySection>
     </>

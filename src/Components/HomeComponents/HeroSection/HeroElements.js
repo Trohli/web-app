@@ -20,9 +20,9 @@ export const SlideContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  max-height: 320px;
+  max-height: 380px;
   height: 100%;
-  max-width: 500px;
+  max-width: 800px;
   width: 100%;
   padding: 15px;
   box-sizing: border-box;

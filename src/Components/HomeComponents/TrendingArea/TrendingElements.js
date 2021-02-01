@@ -79,16 +79,14 @@ export const CardBtn = styled(Button)`
   border-radius: 8px !important;
   background: ${({ main }) =>
     main ? "var(--lightTheme) " : " var(--mainTheme) "} !important;
-  padding: 5px !important;
   color: ${({ main }) =>
     main ? " var(--mainTheme)  " : "var(--lightTheme)  "} !important;
-  font-size: 15px !important;
-  font-weight: bold !important;
-  margin: 5px;
+  font-size: 12px !important;
+  font-weight: bolder;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    transform: scale(1.1);
+    transform: scale(1.02);
     background: ${({ main }) =>
       main ? " var(--mainTheme)" : "var(--lightTheme)  "} !important;
     color: ${({ main }) =>
@@ -122,17 +120,17 @@ export const TrendingNav = styled.div`
   color: var(--mainTheme);
 `;
 export const AddCartIcon = styled(MdAddShoppingCart)`
-  font-size: 20px !important;
+  font-size: 18px !important;
   color: var(--mainTheme);
   cursor: pointer;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.02);
   }
 `;
 export const LikeIcon = styled(FaHeart)`
-  font-size: 20px !important;
+  font-size: 18px !important;
   color: var(--mainTheme);
   cursor: pointer;
 

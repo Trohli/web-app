@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useStateValue } from "../../StateProvider";
 import { PageLinks } from "../GenComponent";
 import SideNav from "../SideNav/Index";
 import {
@@ -22,7 +23,13 @@ import {
 } from "./HeaderElements";
 
 function Header() {
-  const [openNav, setOpenNav] = useState(false);
+  const [{ basket, openNav }, dispatch] = useStateValue();
+  const ToggleNav = () => {
+    dispatch({
+      type: "TOGGEL_NAV",
+      navState: !openNav,
+    });
+  };
 
   return (
     <>
@@ -52,18 +59,18 @@ function Header() {
                 <HeaderBasketContainer>
                   <BasketIcon />
                   <CountContainer>
-                    <Count>0</Count>
+                    <Count>{basket?.length} </Count>
                   </CountContainer>
                 </HeaderBasketContainer>
               </PageLinks>
 
-              <NavIconContainer onClick={() => setOpenNav(!openNav)}>
+              <NavIconContainer onClick={ToggleNav}>
                 {openNav ? <CloseHandleBars /> : <HandlebarsIcon />}
               </NavIconContainer>
             </HeaderRight>
           </HeaderContainer>
         </HeaderBg>
-        <SideNav openNav={openNav} />
+        <SideNav />
       </HeaderComponent>
     </>
   );

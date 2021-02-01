@@ -17,7 +17,7 @@ export const SideNavComponents = styled.div`
   flex-direction: column;
   align-items: center;
   background: var(--mainTheme);
-  width: 20%;
+  width: 20vw;
   height: 90vh;
   position: absolute;
   top: 55px;
@@ -25,7 +25,7 @@ export const SideNavComponents = styled.div`
   border: 2px solid var(--lightTheme);
   left: ${({ openNav }) => (openNav ? "0" : "-100%")};
   opacity: 1;
-  padding: 50px 0;
+  padding: 25px 0;
   box-sizing: border-box;
   transition: all 0.5s ease;
   z-index: 100%;
@@ -62,7 +62,7 @@ export const SideOptionsContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background: #fff;
   width: 100%;
 `;

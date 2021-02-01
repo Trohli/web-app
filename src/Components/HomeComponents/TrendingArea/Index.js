@@ -16,25 +16,25 @@ function TrendingArea() {
     {
       name: "Redimi Note 7",
       image: "./images/phone.png",
-      price: "$1,400",
+      price: 500,
       id: "212",
     },
     {
       name: "Redimi Note 7",
       image: "./images/phone.png",
-      price: "$1,400",
+      price: 200,
       id: "34",
     },
     {
       name: "Redimi Note 7",
       image: "./images/phone.png",
-      price: "$1,400",
+      price: 344,
       id: "23",
     },
     {
       name: "Redimi Note 7",
       image: "./images/phone.png",
-      price: "$1,400",
+      price: 800,
       id: "1",
     },
   ];
@@ -138,8 +138,14 @@ function TrendingArea() {
     ],
   ];
 
-  const cards = items.map(({ name, image, price, id }) => (
-    <TrendingCard name={name} image={image} price={price} key={id} />
+  const cards = items.map(({ name, image, price, id }, i) => (
+    <TrendingCard
+      name={name}
+      image={image}
+      price={price}
+      key={id + i}
+      id={id + i}
+    />
   ));
 
   return (
@@ -148,8 +154,8 @@ function TrendingArea() {
         <TrendingH2>Trending in Your Area</TrendingH2>
         <div>
           <TrendingCardContainer>
-            {CardData.map(({ name, image, price, id }) => (
-              <CardBar>
+            {CardData.map(({ name, image, price, id }, i) => (
+              <CardBar key={id + i}>
                 <AliceCarousel
                   items={cards}
                   autoPlay

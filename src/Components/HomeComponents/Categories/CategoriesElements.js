@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { VscDeviceMobile } from "react-icons/vsc";
 import { MdDevicesOther } from "react-icons/md";
 import { MdFitnessCenter } from "react-icons/md";
 import { CgSmartphoneChip } from "react-icons/cg";
+import { CgArrowLongRight } from "react-icons/cg";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoMdWatch } from "react-icons/io";
 import { IoMdShirt } from "react-icons/io";
@@ -50,6 +52,27 @@ export const StoreContainer = styled.div`
   flex-direction: column;
   border-radius: 5px;
   margin: 10px 0;
+`;
+export const StoreTop = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const ToStoresContainer = styled(Link)`
+  display: flex;
+  color: ${({ main }) => (main ? "var(--mainTheme) " : "#fff")};
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+`;
+export const ToStoresIcon = styled(CgArrowLongRight)`
+  font-size: 18px;
+  margin-left: 5px;
+  margin-top: 4px;
+`;
+export const ToStoresText = styled.h3`
+  font-size: 15px;
 `;
 export const StoreSlider = styled.div`
   display: flex;
