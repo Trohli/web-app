@@ -17,6 +17,7 @@ import {
   ContinueCheckoutIcon,
   BackToShopIcon,
   CartChargeText,
+  BackToShopText,
 } from "./SummaryElements";
 
 function CheckoutSummary() {
@@ -59,10 +60,10 @@ function CheckoutSummary() {
       </SummaryContainer>
       <BackToShopContainer>
         <BackToShopFlex to="/">
-          <BackToShopIcon /> <CartChargeText>Continue Shopping</CartChargeText>
+          <BackToShopIcon /> <BackToShopText>Continue Shopping</BackToShopText>
         </BackToShopFlex>
         <BackToShopFlex to="/dashboard">
-          <CartChargeText>Track order</CartChargeText>
+          <BackToShopText>Track order</BackToShopText>
           <ContinueCheckoutIcon />
         </BackToShopFlex>
       </BackToShopContainer>

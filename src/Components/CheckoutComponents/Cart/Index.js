@@ -18,6 +18,7 @@ import {
   ContinueCheckoutIcon,
   BackToShopFlex,
   BackToShopContainer,
+  BackToShopText,
 } from "./CartElements";
 import CartItem from "./CartItem";
 
@@ -63,10 +64,10 @@ function CheckoutCart() {
       </CartContainer>
       <BackToShopContainer>
         <BackToShopFlex to="/">
-          <BackToShopIcon /> <CartChargeText>Continue Shopping</CartChargeText>
+          <BackToShopIcon /> <BackToShopText>Continue Shopping</BackToShopText>
         </BackToShopFlex>
         <BackToShopFlex to="/checkout/shipping">
-          <CartChargeText>Proceed to Shipping</CartChargeText>
+          <BackToShopText>Proceed to Shipping</BackToShopText>
           <ContinueCheckoutIcon />
         </BackToShopFlex>
       </BackToShopContainer>
@@ -74,11 +75,7 @@ function CheckoutCart() {
   );
   return (
     <>
-      {basket?.length === 0 ? (
-        <h2>your cart is empty</h2>
-      ) : (
-        <CartInlineComponents />
-      )}
+      <CartInlineComponents />
     </>
   );
 }

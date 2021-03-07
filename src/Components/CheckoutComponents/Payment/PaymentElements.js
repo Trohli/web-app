@@ -11,52 +11,118 @@ export const CheckoutPaymentContainer = styled.div`
   justify-content: space-evenly;
   margin: 40px auto;
   width: 100%;
+
+  @media screen and (max-width: 540px) {
+    flex-direction: column;
+    flex: 1;
+  }
+`;
+export const CheckoutPaymentContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+
+  @media screen and (max-width: 1024px) {
+    min-height: 62vh;
+  }
 `;
 export const PaymentMethodContainer = styled.div`
   flex: 0.7;
   display: flex;
   justify-content: space-evenly;
+
+  @media screen and (max-width: 540px) {
+    flex-direction: column;
+    flex: 1;
+  }
 `;
 export const SelectPaymentMethod = styled.div`
   display: flex;
-  height: 50vh;
+  height: 400px;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   flex: 0.3;
+
+  @media screen and (max-width: 540px) {
+    flex-direction: row;
+    flex: 1;
+    height: 100%;
+  }
 `;
 export const PaymentSelectContainer = styled.div`
   cursor: pointer;
-  width: 80%;
+  width: 160px;
   border: ${({ state }) => (state ? " 1px solid var(--mainTheme)" : "none")};
   position: relative;
-  border-radius: 5px;
-  height: 10vh;
+  border-radius: 8px;
+  height: 90px;
+
+  @media screen and (max-width: 540px) {
+    height: 60px;
+    width: 90px;
+  }
+  @media screen and (max-width: 375px) {
+    height: 50px;
+    width: 80px;
+  }
+  @media screen and (max-width: 320px) {
+    height: 40px;
+    width: 60px;
+  }
 `;
 export const PaymentHoverInfo = styled.div`
   display: flex;
   flex-direction: column;
-  height: 10vh;
+  height: 90px;
   position: absolute;
   top: 0;
   right: 0;
   background: var(--mainSeeThroughTheme);
-  border-radius: 5px;
+  border-radius: 8px;
   color: var(--subTheme);
   padding: 2px 5px;
   box-sizing: border-box;
   line-height: 1.2;
   font-weight: bold;
   border: ${({ state }) => (state ? " none" : "1px solid var(--mainTheme)")};
+
+  @media screen and (max-width: 540px) {
+    height: 60px;
+  }
+  @media screen and (max-width: 375px) {
+    height: 50px;
+  }
+  @media screen and (max-width: 320px) {
+    height: 40px;
+  }
 `;
 export const HoverText = styled.h4`
   font-size: ${({ small }) => (small ? "12px" : "14px")};
   margin-bottom: ${({ small }) => (small ? "none" : "5px")};
+
+  @media screen and (max-width: 540px) {
+    font-size: ${({ small }) => (small ? "6px" : "8px")};
+  }
+  @media screen and (max-width: 320px) {
+    font-size: ${({ small }) => (small ? "4px" : "6px")};
+  }
 `;
 export const PaymentImageSelector = styled.img`
   width: 100%;
-  height: 10vh;
-  border-radius: 5px;
+  height: 90px;
+  border-radius: 8px;
+
+  @media screen and (max-width: 540px) {
+    height: 60px;
+  }
+  @media screen and (max-width: 375px) {
+    height: 50px;
+  }
+  @media screen and (max-width: 320px) {
+    height: 40px;
+  }
 `;
 export const ActivePaymentIcon = styled(AiOutlineCheckCircle)`
   position: absolute;
@@ -70,7 +136,7 @@ export const CardDetailContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 400px;
   flex: 0.5;
   box-sizing: border-box;
 `;
@@ -114,6 +180,12 @@ export const PaymentTotalContainer = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+
+  @media screen and (max-width: 540px) {
+    flex: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 export const PaymentTotalContent = styled.div`
   width: 90%;
@@ -123,6 +195,13 @@ export const PaymentTotalContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   color: var(--mainTheme);
+  padding: 10px 5px;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 540px) {
+    min-height: 250px;
+    height: 100%;
+  }
 `;
 export const BillingFlexContainer = styled.div`
   border-bottom: 1px solid var(--mainTheme);
@@ -159,22 +238,6 @@ export const TotalFont = styled.h4`
   font-size: 18px;
   font-weight: bold;
 `;
-export const BackToShopIcon = styled(IoIosArrowRoundBack)`
-  font-size: 30px;
-  font-weight: bolder;
-  margin-right: 15px;
-  padding: 2px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
-`;
-export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
-  font-size: 30px;
-  font-weight: bolder;
-  margin-left: 15px;
-  padding: 2px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
-`;
 export const BackToShopContainer = styled.div`
   display: flex;
   align-items: center;
@@ -193,10 +256,59 @@ export const BackToShopFlex = styled(Link)`
   cursor: pointer;
   text-decoration: none;
 `;
-export const CartChargeText = styled.h4`
-  font-size: ${({ big }) => (big ? "20px" : "16px")};
-  font-weight: bold;
+export const BackToShopIcon = styled(IoIosArrowRoundBack)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-right: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
 `;
+export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
+`;
+export const BackToShopText = styled.h4`
+  font-size: 16px;
+  font-weight: bold;
+
+  @media screen and (max-width: 414px) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
+`;
+
 export const DiscountBtn = styled(Button)`
   border-radius: 8px !important;
   background: ${({ main }) =>

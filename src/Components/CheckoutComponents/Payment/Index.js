@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import {
@@ -23,54 +23,92 @@ import {
   ContinueCheckoutIcon,
   BackToShopContainer,
   BackToShopFlex,
-  CartChargeText,
   PaymentBillFlexContainer,
   PaymentHoverInfo,
   HoverText,
   DiscountBtn,
   DiscountFormInput,
   DiscountForm,
+  CheckoutPaymentContent,
+  BackToShopText,
 } from "./PaymentElements";
 
+const initialState = {
+  visaPay: true,
+  payPal: false,
+  payStack: false,
+  amazonPay: false,
+  hoverVisaPay: false,
+  hoverPayPal: false,
+  hoverPayStack: false,
+  hoverAmazonPay: false,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "setVisaPayActive":
+      return {
+        ...state,
+        visaPay: true,
+        payPal: false,
+        payStack: false,
+        amazonPay: false,
+      };
+    case "setPayPalActive":
+      return {
+        ...state,
+        visaPay: false,
+        payPal: true,
+        payStack: false,
+        amazonPay: false,
+      };
+    case "setPayStackActive":
+      return {
+        ...state,
+        visaPay: false,
+        payPal: false,
+        payStack: true,
+        amazonPay: false,
+      };
+    case "setAmazonPayActive":
+      return {
+        ...state,
+        visaPay: false,
+        payPal: false,
+        payStack: false,
+        amazonPay: true,
+      };
+    case "setVisaPayHoverState":
+      return {
+        ...state,
+        hoverVisaPay: !state.hoverVisaPay,
+      };
+    case "setPayPalHoverState":
+      return {
+        ...state,
+        hoverPayPal: !state.hoverPayPal,
+      };
+    case "setPayStackHoverState":
+      return {
+        ...state,
+        hoverPayStack: !state.hoverPayStack,
+      };
+    case "setAmazonPayHoverState":
+      return {
+        ...state,
+        hoverAmazonPay: !state.hoverAmazonPay,
+      };
+  }
+};
+
 function CheckoutPayment() {
-  const [visaPay, setVisaPay] = useState(true);
-  const [hoverVisaPay, setHoverVisaPay] = useState(false);
-  const [payPal, setPayPal] = useState(false);
-  const [hoverPayPal, setHoverPayPal] = useState(false);
-  const [payStack, setPayStack] = useState(false);
-  const [hoverPayStack, setHoverPayStack] = useState(false);
-  const [amazonPay, setAmazonPay] = useState(false);
-  const [hoverAmazonPay, sethoverAmazonPay] = useState(false);
+  const [methodState, dispatch] = useReducer(reducer, initialState);
+
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [focus, setfocus] = useState("");
-
-  const activateVisaPay = () => {
-    setVisaPay(true);
-    setPayPal(false);
-    setPayStack(false);
-    setAmazonPay(false);
-  };
-  const activatePaypal = () => {
-    setVisaPay(false);
-    setPayPal(true);
-    setPayStack(false);
-    setAmazonPay(false);
-  };
-  const activatePayStack = () => {
-    setVisaPay(false);
-    setPayPal(false);
-    setPayStack(true);
-    setAmazonPay(false);
-  };
-  const activateAmazonPay = () => {
-    setVisaPay(false);
-    setPayPal(false);
-    setPayStack(false);
-    setAmazonPay(true);
-  };
 
   const paymentOptionDetails = [
     {
@@ -78,58 +116,50 @@ function CheckoutPayment() {
       image: "../images/pm2.png",
       text:
         "express payment with a Visa Card, MasterCard, American Express and other cards.",
-      state: visaPay,
-      hoverState: hoverVisaPay,
-      setHoverState: setHoverVisaPay,
-      activeFunction: activateVisaPay,
+      state: methodState.visaPay,
+      hoverState: methodState.hoverVisaPay,
+      hoverStateType: "setVisaPayHoverState",
+      actionType: "setVisaPayActive",
     },
     {
       name: "PayStack",
       image: "../images/pm5.png",
       text:
         "Pay through direct bank transfer with Paystack, Available in Nigeria.",
-      state: payStack,
-      hoverState: hoverPayStack,
-      setHoverState: setHoverPayStack,
-      activeFunction: activatePayStack,
+      state: methodState.payStack,
+      hoverState: methodState.hoverPayStack,
+      hoverStateType: "setPayStackHoverState",
+      actionType: "setPayStackActive",
     },
     {
       name: "payPal",
       image: "../images/pm4.png",
       text:
         "Pay with paypal. You should have a Paypal account with funds above your bill.",
-      state: payPal,
-      hoverState: hoverPayPal,
-      setHoverState: setHoverPayPal,
-      activeFunction: activatePaypal,
+      state: methodState.payPal,
+      hoverState: methodState.hoverPayPal,
+      hoverStateType: "setPayPalHoverState",
+      actionType: "setPayPalActive",
     },
     {
       name: "amazonPay",
       image: "../images/pm1.png",
       text: "Pay with amazon and get express delivery.",
-      state: amazonPay,
-      hoverState: hoverAmazonPay,
-      setHoverState: sethoverAmazonPay,
-      activeFunction: activateAmazonPay,
+      state: methodState.amazonPay,
+      hoverState: methodState.hoverAmazonPay,
+      hoverStateType: "setAmazonPayHoverState",
+      actionType: "setAmazonPayActive",
     },
   ];
 
   const paymentOptions = paymentOptionDetails.map(
-    ({
-      name,
-      image,
-      text,
-      state,
-      hoverState,
-      setHoverState,
-      activeFunction,
-    }) => (
+    ({ name, image, text, state, hoverState, hoverStateType, actionType }) => (
       <PaymentSelectContainer
         key={name}
         state={state}
-        onMouseLeave={() => setHoverState(false)}
-        onMouseEnter={() => setHoverState(true)}
-        onClick={activeFunction}
+        onMouseLeave={() => dispatch({ type: hoverStateType })}
+        onMouseEnter={() => dispatch({ type: hoverStateType })}
+        onClick={() => dispatch({ type: actionType })}
       >
         <PaymentImageSelector src={image} />
         {state && <ActivePaymentIcon />}
@@ -144,88 +174,90 @@ function CheckoutPayment() {
   );
   return (
     <>
-      <CheckoutPaymentContainer>
-        <PaymentMethodContainer>
-          <SelectPaymentMethod>{paymentOptions}</SelectPaymentMethod>
-          <CardDetailContainer>
-            <CardDetailContent>
-              <Cards
-                cvc={cvc}
-                expiry={expiry}
-                focused={focus}
-                name={name}
-                number={number}
-              />
-              <CardForm>
-                <CardInput
-                  type="tel"
-                  name="number"
-                  placeholder="Card Number"
-                  value={number}
-                  onChange={(e) => setNumber(e.target.value)}
-                  onFocus={(e) => setfocus(e.target.name)}
+      <CheckoutPaymentContent>
+        <CheckoutPaymentContainer>
+          <PaymentMethodContainer>
+            <SelectPaymentMethod>{paymentOptions}</SelectPaymentMethod>
+            <CardDetailContainer>
+              <CardDetailContent>
+                <Cards
+                  cvc={cvc}
+                  expiry={expiry}
+                  focused={focus}
+                  name={name}
+                  number={number}
                 />
-                <CardInput
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  onFocus={(e) => setfocus(e.target.name)}
-                />
-                <CardInput
-                  type="text"
-                  name="expiry"
-                  placeholder="MM/YY/ Expiry"
-                  value={expiry}
-                  onChange={(e) => setExpiry(e.target.value)}
-                  onFocus={(e) => setfocus(e.target.name)}
-                />
-                <CardInput
-                  last
-                  type="tel"
-                  name="cvc"
-                  placeholder="CVC"
-                  value={cvc}
-                  onChange={(e) => setCvc(e.target.value)}
-                  onFocus={(e) => setfocus(e.target.name)}
-                />
-              </CardForm>
-            </CardDetailContent>
-          </CardDetailContainer>
-        </PaymentMethodContainer>
-        <PaymentTotalContainer>
-          <PaymentTotalContent>
-            <PaymentSumHeading>Your Total Bill</PaymentSumHeading>
-            <BillingFlexContainer>
-              <PaymentBillFlexContainer>
-                <PaymentBillFlex>
-                  <PaymentCostText small>Cart Total:</PaymentCostText>
-                  <PaymentCostText> $55.53</PaymentCostText>
-                </PaymentBillFlex>
-                <PaymentBillFlex>
-                  <PaymentCostText small>Shipping:</PaymentCostText>
-                  <PaymentCostText> $44.4</PaymentCostText>
-                </PaymentBillFlex>
-              </PaymentBillFlexContainer>
-              <DiscountForm>
-                <DiscountFormInput placeholder="Discount Code?" type="tel" />
-                <DiscountBtn>Apply</DiscountBtn>
-              </DiscountForm>
-            </BillingFlexContainer>
-            <PaymentBillFlex>
-              <PaymentCostText> Total:</PaymentCostText>
-              <TotalFont>$553.33</TotalFont>
-            </PaymentBillFlex>
-          </PaymentTotalContent>
-        </PaymentTotalContainer>
-      </CheckoutPaymentContainer>
+                <CardForm>
+                  <CardInput
+                    type="tel"
+                    name="number"
+                    placeholder="Card Number"
+                    value={number}
+                    onChange={(e) => setNumber(e.target.value)}
+                    onFocus={(e) => setfocus(e.target.name)}
+                  />
+                  <CardInput
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    onFocus={(e) => setfocus(e.target.name)}
+                  />
+                  <CardInput
+                    type="text"
+                    name="expiry"
+                    placeholder="MM/YY/ Expiry"
+                    value={expiry}
+                    onChange={(e) => setExpiry(e.target.value)}
+                    onFocus={(e) => setfocus(e.target.name)}
+                  />
+                  <CardInput
+                    last
+                    type="tel"
+                    name="cvc"
+                    placeholder="CVC"
+                    value={cvc}
+                    onChange={(e) => setCvc(e.target.value)}
+                    onFocus={(e) => setfocus(e.target.name)}
+                  />
+                </CardForm>
+              </CardDetailContent>
+            </CardDetailContainer>
+          </PaymentMethodContainer>
+          <PaymentTotalContainer>
+            <PaymentTotalContent>
+              <PaymentSumHeading>Your Total Bill</PaymentSumHeading>
+              <BillingFlexContainer>
+                <PaymentBillFlexContainer>
+                  <PaymentBillFlex>
+                    <PaymentCostText small>Cart Total:</PaymentCostText>
+                    <PaymentCostText> $55.53</PaymentCostText>
+                  </PaymentBillFlex>
+                  <PaymentBillFlex>
+                    <PaymentCostText small>Shipping:</PaymentCostText>
+                    <PaymentCostText> $44.4</PaymentCostText>
+                  </PaymentBillFlex>
+                </PaymentBillFlexContainer>
+                <DiscountForm>
+                  <DiscountFormInput placeholder="Discount Code?" type="tel" />
+                  <DiscountBtn>Apply</DiscountBtn>
+                </DiscountForm>
+              </BillingFlexContainer>
+              <PaymentBillFlex>
+                <PaymentCostText> Total:</PaymentCostText>
+                <TotalFont>$553.33</TotalFont>
+              </PaymentBillFlex>
+            </PaymentTotalContent>
+          </PaymentTotalContainer>
+        </CheckoutPaymentContainer>
+      </CheckoutPaymentContent>
       <BackToShopContainer>
         <BackToShopFlex to="/checkout">
-          <BackToShopIcon /> <CartChargeText>Back to Cart</CartChargeText>
+          <BackToShopIcon /> <BackToShopText>Back to Cart</BackToShopText>
         </BackToShopFlex>
         <BackToShopFlex to="/checkout/summary">
-          <CartChargeText>Complete Payment</CartChargeText>
+          <BackToShopText>Complete Payment</BackToShopText>
           <ContinueCheckoutIcon />
         </BackToShopFlex>
       </BackToShopContainer>

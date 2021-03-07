@@ -40,7 +40,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: 1250px;
-  padding: 0 15px;
+  padding: 0 10px;
   box-sizing: border-box;
   margin: 0 auto;
   width: 100%;
@@ -51,6 +51,7 @@ export const HeaderLogo = styled.img`
   object-fit: contain;
   height: 40px;
   flex: 0.1;
+  margin-right: 10px;
 
   @media screen and (max-width: 768px) {
     height: 30px;
@@ -61,30 +62,39 @@ export const HeaderLogo = styled.img`
   @media screen and (max-width: 375px) {
     height: 18px;
   }
+  @media screen and (max-width: 320px) {
+    height: 15px;
+  }
+  @media screen and (max-width: 280px) {
+    height: 12px;
+  }
 `;
 
 export const HeaderSearch = styled.div`
   display: flex;
-  flex: 0.5;
+  flex: 0.8;
   align-items: center;
   justify-content: center;
   height: 30px;
   max-width: 550px;
   width: 100%;
   border-radius: 9px;
-  background: #fff;
+  background: var(--lightTheme);
 
   @media screen and (max-width: 768px) {
-    max-width: 450px;
     height: 25px;
   }
   @media screen and (max-width: 540px) {
-    max-width: 200px;
     height: 22px;
   }
   @media screen and (max-width: 375px) {
-    max-width: 160px;
     height: 20px;
+  }
+  @media screen and (max-width: 320px) {
+    height: 18px;
+  }
+  @media screen and (max-width: 280px) {
+    height: 16px;
   }
 `;
 
@@ -112,8 +122,21 @@ export const IconContainer = styled.div`
 `;
 
 export const SearchEngIcon = styled(SearchIcon)`
-  font-size: 25px !important;
+  font-size: 28px !important;
   color: var(--lightTheme) !important;
+
+  @media screen and (max-width: 540px) {
+    font-size: 25px !important;
+  }
+  @media screen and (max-width: 414px) {
+    font-size: 22px !important;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 18px !important;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
 `;
 
 export const HeaderRight = styled.div`
@@ -122,8 +145,8 @@ export const HeaderRight = styled.div`
   justify-content: space-between;
   flex: 0.2;
 
-  @media screen and (max-width: 768px) {
-    flex: 0.3;
+  @media screen and (max-width: 540px) {
+    flex: 0.15;
   }
 `;
 
@@ -146,37 +169,86 @@ export const BasketIcon = styled(ShoppingBasketIcon)`
   font-size: 30px !important;
   color: var(--lightTheme) !important;
 
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 786px) {
     font-size: 25px !important;
   }
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 540px) {
     font-size: 20px !important;
+  }
+  @media screen and (max-width: 414px) {
+    font-size: 18px !important;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 16px !important;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
   }
 `;
 
 export const HandlebarsIcon = styled(FaBars)`
-  font-size: 25px;
+  font-size: 30px;
   color: var(--lightTheme);
+
+  @media screen and (max-width: 786px) {
+    font-size: 25px !important;
+  }
+  @media screen and (max-width: 540px) {
+    font-size: 20px !important;
+  }
+  @media screen and (max-width: 414px) {
+    font-size: 18px !important;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 16px !important;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 export const CloseHandleBars = styled(FaTimes)`
-  font-size: 25px;
+  font-size: 30px;
   color: var(--lightTheme);
+
+  @media screen and (max-width: 786px) {
+    font-size: 25px !important;
+  }
+  @media screen and (max-width: 540px) {
+    font-size: 20px !important;
+  }
+  @media screen and (max-width: 414px) {
+    font-size: 18px !important;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 16px !important;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 
 export const LikeIcon = styled(FavoriteBorderIcon)`
   font-size: 30px !important;
   color: var(--lightTheme) !important;
 
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 786px) {
     font-size: 25px !important;
   }
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 540px) {
+    font-size: 20px !important;
+  }
+  @media screen and (max-width: 414px) {
     font-size: 18px !important;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 16px !important;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
   }
 `;
 
 export const CountContainer = styled.div`
-  display: felx;
   background: var(--subTheme);
   border-radius: 999px;
   border: 1px solid var(--mainTheme);
@@ -191,16 +263,26 @@ export const CountContainer = styled.div`
   justify-content: center;
   text-align: center;
 
+  @media screen and (max-width: 786px) {
+    top: -3px;
+    right: 0px;
+  }
   @media screen and (max-width: 540px) {
     width: 8px;
     height: 8px;
     padding: 2px;
+    right: 3px;
+  }
+  @media screen and (max-width: 414px) {
+    top: -3px;
+    right: 5px;
   }
 `;
 
 export const Count = styled.p`
   font-size: 12px;
-  color: var(--lightTheme);
+  color: var(--mainTheme);
+  font-weight: bold;
 
   @media screen and (max-width: 540px) {
     font-size: 10px;

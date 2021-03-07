@@ -4,7 +4,7 @@ import { RiArrowLeftCircleFill } from "react-icons/ri";
 import { Button } from "@material-ui/core";
 
 export const Slide = styled.div`
-  height: 50vh;
+  height: 40vh;
   width: 100%;
   background-image: url("${({ content }) => content}");
   background-size: cover;
@@ -13,6 +13,13 @@ export const Slide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 375px) {
+    height: 50vh;
+  }
+  @media screen and (max-width: 320px) {
+    height: 60vh;
+  }
 `;
 
 export const SlideContent = styled.div`
@@ -40,11 +47,31 @@ export const ContentHeading = styled.h2`
   font-size: 54px;
   font-weight: 5px;
   font: italic normal 300 55px/70px Poppins;
+
+  @media screen and (max-width: 414px) {
+    font-size: 50px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 48px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 40px;
+  }
 `;
 export const ContentText = styled.p`
   font-size: 18px;
   font-weight: 2px;
   font: normal normal 300 15px/23px Poppins;
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
 `;
 export const Btn = styled(Button)`
   border-radius: 99px !important;

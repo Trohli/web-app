@@ -19,6 +19,13 @@ export const SummaryContainer = styled.div`
   border: 1px solid var(--mainTheme);
   border-radius: 5px;
   justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 850px;
+  }
+  @media screen and (max-width: 414px) {
+    height: 80vh;
+  }
 `;
 export const SummaryContentContainer = styled.div`
   position: absolute;
@@ -59,47 +66,78 @@ export const SummaryHeading = styled.div`
 export const SummaryText = styled.h5`
   font-size: 16px;
   color: ${({ top }) => (top ? "var(--subTheme)" : "var(--lightTheme)")};
+
+  @media screen and (max-width: 375px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
 `;
 export const PhoneIcon = styled(BsPhone)`
   font-size: 20px;
   color: var(--subTheme);
   margin-right: 15px;
+
+  @media screen and (max-width: 414px) {
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    margin-right: 8px;
+  }
+  @media screen and (max-width: 320px) {
+    margin-right: 5px;
+  }
 `;
 export const MailIcon = styled(HiOutlineMail)`
   font-size: 20px;
   color: var(--subTheme);
   margin-right: 15px;
+
+  @media screen and (max-width: 414px) {
+    margin-right: 5px;
+  }
+  @media screen and (max-width: 375px) {
+    margin-right: 4px;
+  }
+  @media screen and (max-width: 320px) {
+    margin-right: 3px;
+  }
 `;
 export const SmallText = styled.p`
   font-size: 16px;
   font-weight: bold;
   color: var(--lightTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 export const BgText = styled.h3`
   font-size: 30px;
   font-weight: bold;
   color: var(--subTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 25px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 22px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 18px;
+  }
 `;
 export const MidText = styled.h4`
   font-size: 20px;
   font-weight: bold;
   color: var(--lightTheme);
-`;
-export const BackToShopIcon = styled(IoIosArrowRoundBack)`
-  font-size: 30px;
-  font-weight: bolder;
-  margin-right: 15px;
-  padding: 2px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
-`;
-export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
-  font-size: 30px;
-  font-weight: bolder;
-  margin-left: 15px;
-  padding: 2px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
 `;
 export const BackToShopContainer = styled.div`
   display: flex;
@@ -119,7 +157,55 @@ export const BackToShopFlex = styled(Link)`
   cursor: pointer;
   text-decoration: none;
 `;
-export const CartChargeText = styled.h4`
-  font-size: ${({ big }) => (big ? "20px" : "16px")};
+export const BackToShopIcon = styled(IoIosArrowRoundBack)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-right: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
+`;
+export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
+`;
+export const BackToShopText = styled.h4`
+  font-size: 16px;
   font-weight: bold;
+
+  @media screen and (max-width: 414px) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
 `;

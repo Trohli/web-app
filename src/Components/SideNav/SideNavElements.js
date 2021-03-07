@@ -29,32 +29,69 @@ export const SideNavComponents = styled.div`
   box-sizing: border-box;
   transition: all 0.5s ease;
   z-index: 100%;
+
+  @media screen and (max-width: 1024px) {
+    width: 40vw;
+  }
+  @media screen and (max-width: 768px) {
+    width: 50vw;
+  }
+  @media screen and (max-width: 540px) {
+    width: 60vw;
+  }
+  @media screen and (max-width: 414px) {
+    width: 80vw;
+  }
+  @media screen and (max-width: 375px) {
+    width: 100vw;
+  }
+  @media screen and (max-width: 320px) {
+    width: 95vw;
+    height: 94.5vh;
+    top: 30px;
+  }
 `;
 
 export const NavHeadText = styled.h2`
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: var(--lightTheme);
   margin-bottom: 10px;
+
+  @media screen and (max-width: 414px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 16px;
+  }
 `;
 
 export const SideAvatar = styled(Avatar)`
-  height: 80px !important;
-  width: 80px !important;
+  height: 70px !important;
+  width: 70px !important;
   border: 3px solid var(--subTheme);
   margin-bottom: 10px;
 
   @media screen and (max-width: 768px) {
-    height: 30px !important;
-    width: 30px !important;
+    height: 60px !important;
+    width: 60px !important;
   }
   @media screen and (max-width: 540px) {
-    height: 25px !important;
-    width: 25px !important;
+    height: 45px !important;
+    width: 45px !important;
+    border: 2px solid var(--subTheme);
   }
   @media screen and (max-width: 375px) {
-    height: 20px !important;
-    width: 20px !important;
+    height: 40px !important;
+    width: 40px !important;
+    border: 1px solid var(--subTheme);
+  }
+  @media screen and (max-width: 320px) {
+    height: 25px !important;
+    width: 25px !important;
   }
 `;
 

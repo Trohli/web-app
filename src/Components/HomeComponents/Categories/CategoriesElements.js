@@ -53,8 +53,13 @@ export const StoreContainer = styled.div`
   border-radius: 5px;
   margin: 10px 0;
 `;
+export const StoreTopContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 export const StoreTop = styled.div`
   display: flex;
+  flex-direction: colunm;
   align-items: center;
   justify-content: space-between;
 `;
@@ -69,10 +74,19 @@ export const ToStoresContainer = styled(Link)`
 export const ToStoresIcon = styled(CgArrowLongRight)`
   font-size: 18px;
   margin-left: 5px;
-  margin-top: 4px;
 `;
 export const ToStoresText = styled.h3`
   font-size: 15px;
+
+  @media screen and (max-width: 414px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 export const StoreSlider = styled.div`
   display: flex;
@@ -117,11 +131,21 @@ export const StoreImg = styled.img`
   width: 80px;
 `;
 
-export const StoresH3 = styled.div`
+export const StoresH3 = styled.h3`
   margin-bottom: 10px;
-  font-size: ${({ small }) => (small ? "16px" : "20px")};
-  font-weight: ${({ small }) => (small ? "bold" : "bolder")};
+  font-size: "20px";
+  font-weight: bold;
   color: ${({ main }) => (main ? "var(--mainTheme) " : "var(--subTheme) ")};
+
+  @media screen and (max-width: 414px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 17px;
+  }
 `;
 export const StoresContentH3 = styled.div`
   font-size: ${({ small }) => (small ? "16px" : "20px")};

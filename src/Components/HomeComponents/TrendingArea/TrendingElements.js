@@ -19,6 +19,16 @@ export const TrendingH2 = styled.h2`
   font-weight: bolder;
   margin-bottom: 15px;
   color: var(--lightTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 16px;
+  }
 `;
 
 export const TrendingCardContainer = styled.div`

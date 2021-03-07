@@ -11,19 +11,42 @@ export const ShipContainer = styled.div`
   max-width: 1300px;
   margin: 0 auto;
   width: 100%;
-  height: max-content;
+  min-height: 60vh;
   color: var(--mainTheme);
+
+  @media screen and (max-width: 1024px) {
+    min-height: 62vh;
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+  }
+  @media screen and (max-width: 540px) {
+    width: 100%;
+  }
 `;
 
 export const ShipFormContainer = styled.form`
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 15px;
   max-width: 650px;
   width: 100%;
   padding: 40px 20px;
   box-sizing: border-box;
   background: #fff;
   border-radius: 4px;
+  height: 100%;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 550px;
+  }
+  @media screen and (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+  // @media screen and (max-width: 540px) {
+  //   width: 100%;
+  // }
 `;
 export const FormElementContainer = styled.div`
   display: grid;
@@ -75,9 +98,17 @@ export const SizeSelect = styled.select`
   box-sizing: border-box;
   border: none;
   color: var(--mainTheme);
+  font-size: 12px;
 
   &:focus {
     outline: none;
+  }
+`;
+export const SelectOption = styled.option`
+  font-size: 12px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
   }
 `;
 export const SummaryContainer = styled.div`
@@ -88,6 +119,17 @@ export const SummaryContainer = styled.div`
   height: max-content;
   padding: 20px 20px;
   border: 1px solid var(--mainTheme);
+
+  @media screen and (max-width: 1024px) {
+    max-width: 250px;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 450px;
+    width: 90%;
+  }
+  // @media screen and (max-width: 540px) {
+  //   width: 100%;
+  // }
 `;
 export const SummaryGrid = styled.div`
   display: grid;
@@ -115,6 +157,10 @@ export const SummaryHeading = styled.h4`
 export const SmallFont = styled.h5`
   font-size: 12px;
   font-weight: bold;
+
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
 `;
 export const SpaceFont = styled.h5`
   font-size: 12px;
@@ -142,23 +188,6 @@ export const SpeedSelect = styled.select`
     outline: none;
   }
 `;
-
-export const BackToShopIcon = styled(IoIosArrowRoundBack)`
-  font-size: 30px;
-  font-weight: bolder;
-  margin-right: 15px;
-  padding: 2px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
-`;
-export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
-  font-size: 30px;
-  font-weight: bolder;
-  margin-left: 15px;
-  padding: 2px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
-`;
 export const BackToShopContainer = styled.div`
   display: flex;
   align-items: center;
@@ -177,7 +206,55 @@ export const BackToShopFlex = styled(Link)`
   cursor: pointer;
   text-decoration: none;
 `;
-export const CartChargeText = styled.h4`
-  font-size: ${({ big }) => (big ? "20px" : "16px")};
+export const BackToShopIcon = styled(IoIosArrowRoundBack)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-right: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
+`;
+export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
+`;
+export const BackToShopText = styled.h4`
+  font-size: 16px;
   font-weight: bold;
+
+  @media screen and (max-width: 414px) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
 `;

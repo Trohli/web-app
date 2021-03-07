@@ -23,6 +23,8 @@ import {
   CartChargeText,
   ContinueCheckoutIcon,
   BackToShopIcon,
+  BackToShopText,
+  SelectOption,
 } from "./ShippingElements";
 
 function CheckoutShipping() {
@@ -58,7 +60,7 @@ function CheckoutShipping() {
             </FlexHigh>
             <FlexLow>
               <FormElementContainer>
-                <SmallFont>Appartments etc. (Optional)</SmallFont>
+                <SmallFont>Appartments?</SmallFont>
                 <ShippingFormInput placeholder="first floor" type="text" />
               </FormElementContainer>
             </FlexLow>
@@ -73,10 +75,10 @@ function CheckoutShipping() {
             <FormElementContainer>
               <SmallFont>Country</SmallFont>
               <SizeSelect>
-                <option>Nigeria</option>
-                <option>Ghana</option>
-                <option>Malawi</option>
-                <option>Usa</option>
+                <SelectOption>Nigeria</SelectOption>
+                <SelectOption>Ghana</SelectOption>
+                <SelectOption>Malawi</SelectOption>
+                <SelectOption>Usa</SelectOption>
               </SizeSelect>
             </FormElementContainer>
             <FormElementContainer>
@@ -86,10 +88,10 @@ function CheckoutShipping() {
             <FormElementContainer>
               <SmallFont>State</SmallFont>
               <SizeSelect>
-                <option>Abuja</option>
-                <option>Enugu</option>
-                <option>Lagos</option>
-                <option>Owerri</option>
+                <SelectOption>Abuja</SelectOption>
+                <SelectOption>Enugu</SelectOption>
+                <SelectOption>Lagos</SelectOption>
+                <SelectOption>Owerri</SelectOption>
               </SizeSelect>
             </FormElementContainer>
           </ElementGrid>
@@ -103,9 +105,9 @@ function CheckoutShipping() {
           <SpeedSelectContainer>
             <SmallFont>How fast should it go?</SmallFont>
             <SpeedSelect>
-              <option>Normal</option>
-              <option>fast</option>
-              <option>very fast</option>
+              <SelectOption>Normal</SelectOption>
+              <SelectOption>fast</SelectOption>
+              <SelectOption>very fast</SelectOption>
             </SpeedSelect>
           </SpeedSelectContainer>
           <SummaryGrid>
@@ -130,10 +132,10 @@ function CheckoutShipping() {
       </ShipContainer>
       <BackToShopContainer>
         <BackToShopFlex to="/checkout">
-          <BackToShopIcon /> <CartChargeText>Back to Cart</CartChargeText>
+          <BackToShopIcon /> <BackToShopText>Back to Cart</BackToShopText>
         </BackToShopFlex>
         <BackToShopFlex to="/checkout/payment">
-          <CartChargeText>Proceed to Payments</CartChargeText>
+          <BackToShopText>Proceed to Payments</BackToShopText>
           <ContinueCheckoutIcon />
         </BackToShopFlex>
       </BackToShopContainer>

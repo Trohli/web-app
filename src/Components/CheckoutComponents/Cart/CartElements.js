@@ -13,20 +13,39 @@ export const CartContainer = styled.div`
   max-width: 1300px;
   margin: 0 auto;
   width: 100%;
-  height: max-content;
+  min-height: 60vh;
   color: var(--mainTheme);
+
+  @media screen and (max-width: 1024px) {
+    min-height: 62vh;
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+  }
+  @media screen and (max-width: 540px) {
+    width: 100%;
+  }
 `;
 
 export const CartItemsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 750px;
-  width: 100%;
+  width: 750px;
   padding: 10px 20px;
   box-sizing: border-box;
   height: 100%;
   background: #fff;
   border-radius: 4px;
+
+  @media screen and (max-width: 1024px) {
+    width: 550px;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0 auto 25px auto;
+    width: 100%;
+  }
 `;
 
 export const CartItemsContent = styled.div`
@@ -42,6 +61,7 @@ export const CartItemsContent = styled.div`
 export const ItemTextContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 5px 0;
 `;
 
 export const FlexMore = styled.div`
@@ -52,7 +72,6 @@ export const FlexMore = styled.div`
 `;
 export const FlexItemsMore = styled.div`
   display: flex;
-  align-items: center;
   padding: 5px;
   box-sizing: border-box;
   width: 30%;
@@ -78,6 +97,9 @@ export const RemoveCartIcon = styled(MdDeleteForever)`
 export const CartTextNormal = styled.h4`
   font-size: 15px;
   font-weight: bold;
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 export const CartTextSmall = styled.p`
   font-size: 12px;
@@ -95,13 +117,19 @@ export const BillingContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  width: 100%;
-  max-width: 250px;
+  width: 250px;
   height: 100%;
   background: var(--mainSeeThroughTheme);
   border: 1px solid var(--mainTheme);
   padding: 15px 10px;
   color: var(--mainTheme);
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 540px) {
+    padding: 10px 5px;
+  }
 `;
 export const ChargeHeading = styled.div`
   display: flex;
@@ -110,36 +138,49 @@ export const ChargeHeading = styled.div`
   padding-bottom: 10px;
   box-sizing: border-box;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 540px) {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
 `;
 export const CartSumIcon = styled(GiShoppingCart)`
   font-size: 30px;
   font-weight: bolder;
   margin-right: 15px;
   color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 16px;
+  }
 `;
-export const BackToShopIcon = styled(IoIosArrowRoundBack)`
-  font-size: 30px;
-  font-weight: bolder;
-  margin-right: 15px;
-  padding: 2px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
-`;
-export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
-  font-size: 30px;
-  font-weight: bolder;
-  margin-left: 15px;
-  padding: 2px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
-`;
+
 export const CartSumText = styled.h3`
   font-size: 18px;
   font-weight: bold;
+  width: 100%;
+
+  @media screen and (max-width: 375px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
 `;
 export const CartChargeText = styled.h4`
   font-size: ${({ big }) => (big ? "20px" : "16px")};
   font-weight: bold;
+
+  @media screen and (max-width: 320px) {
+    font-size: ${({ big }) => (big ? "16px" : "14px")};
+  }
 `;
 export const CartChargeFlex = styled.div`
   display: flex;
@@ -148,6 +189,10 @@ export const CartChargeFlex = styled.div`
   padding: 0 15px;
   box-sizing: border-box;
   margin-bottom: 5px;
+
+  @media screen and (max-width: 540px) {
+    padding: 0 10px;
+  }
 `;
 export const CartChargeContainer = styled.div`
   display: flex;
@@ -155,6 +200,10 @@ export const CartChargeContainer = styled.div`
   padding-bottom: 10px;
   box-sizing: border-box;
   border-bottom: 1px solid var(--mainTheme);
+
+  @media screen and (max-width: 540px) {
+    padding-bottom: 5px;
+  }
 `;
 export const BackToShopContainer = styled.div`
   display: flex;
@@ -173,4 +222,56 @@ export const BackToShopFlex = styled(Link)`
   border: none;
   cursor: pointer;
   text-decoration: none;
+`;
+export const BackToShopIcon = styled(IoIosArrowRoundBack)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-right: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
+`;
+export const ContinueCheckoutIcon = styled(IoIosArrowRoundForward)`
+  font-size: 30px;
+  font-weight: bolder;
+  margin-left: 15px;
+  padding: 2px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
+`;
+export const BackToShopText = styled.h4`
+  font-size: 16px;
+  font-weight: bold;
+
+  @media screen and (max-width: 414px) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
 `;

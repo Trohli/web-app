@@ -23,6 +23,7 @@ import {
   ToStoresContainer,
   ToStoresIcon,
   ToStoresText,
+  StoreTopContainer,
 } from "./CategoriesElements";
 import SideCategory from "./SideCategory";
 import StoreCategories from "./StoreCategories";
@@ -172,13 +173,13 @@ function Categories() {
         </SideCategoriesContainer>
         <StoreCategoriesContainer>
           <StoreContainer main>
-            <StoreTop>
+            <StoreTopContainer>
               <StoresH3>Nearby Stores</StoresH3>
               <ToStoresContainer to="/stores">
                 <ToStoresText>To Stores</ToStoresText>
                 <ToStoresIcon />
               </ToStoresContainer>
-            </StoreTop>
+            </StoreTopContainer>
             <StoreSlider>
               <AliceCarousel
                 autoPlay

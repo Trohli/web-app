@@ -8,6 +8,8 @@ import {
   CardPrice,
   AddCartIcon,
   AddCartIconContainer,
+  CardButtomContainer,
+  LikeIcon,
 } from "./ClosebyElements";
 
 function ClosebyCard({ image, text, distance, price, id }) {
@@ -30,13 +32,16 @@ function ClosebyCard({ image, text, distance, price, id }) {
   return (
     <>
       <Card>
-        <CardImg src={image} />
-        <CardText> {text} </CardText>
-        <CardM> {distance} </CardM>
         <CardPrice>${price} </CardPrice>
         <AddCartIconContainer onClick={addToBasket}>
           <AddCartIcon />
         </AddCartIconContainer>
+        <CardImg src={image} />
+        <CardText> {text} </CardText>
+        <CardButtomContainer>
+          <CardM> {distance} </CardM>
+          <LikeIcon />
+        </CardButtomContainer>
       </Card>
     </>
   );
